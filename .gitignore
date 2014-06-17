@@ -1,0 +1,11 @@
+.metadata/
+RemoteSystemsTempFiles/
+api/.classpath
+api/.project
+api/.settings/
+api/target/
+atdd/.project
+web/.classpath
+web/.project
+web/.settings/
+*.bak
