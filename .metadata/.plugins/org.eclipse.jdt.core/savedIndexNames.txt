@@ -1,2 +1,0 @@
-INDEX VERSION 1.126+D:\park-ko\gosoft\.metadata\.plugins\org.eclipse.jdt.core
-1243057733.index
