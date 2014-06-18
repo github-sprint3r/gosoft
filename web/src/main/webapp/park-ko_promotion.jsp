@@ -70,7 +70,7 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">ตั้งค่า</li>
-              <li class><a href="park-ko_fee.jsp">กำหนดอัตรค่าจอดรถ</a></li>
+              <li class><a href="park-ko_fee.jsp">กำหนดอัตราค่าจอดรถ</a></li>
               <li class="active"><a href="park-ko_promotion.jsp">กำหนดส่วนลด</a></li>
               <li class="nav-header">การจัดการ</li>
               <li><a href="#">คิดราคาค่าจอดรถ</a></li>

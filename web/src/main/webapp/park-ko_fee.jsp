@@ -70,7 +70,7 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">ตั้งค่า</li>
-              <li class="active"><a href="park-ko_fee.jsp">กำหนดอัตรค่าจอดรถ</a></li>
+              <li class="active"><a href="park-ko_fee.jsp">กำหนดอัตราค่าจอดรถ</a></li>
                <li class><a href="park-ko_promotion.jsp">กำหนดส่วนลด</a></li>
               <li class="nav-header">การจัดการ</li>
               <li><a href="#">คิดราคาค่าจอดรถ</a></li>
@@ -106,38 +106,38 @@
               			</tr>
               			<tr>
               					<td>
-              							<input name = "FEE_NAME_1"  id = "FEE_NAME_1" type = "text"/> 				
+              							<input name = "FEE_NAME_1"  id = "FEE_NAME_1"  maxlength="50"  type = "text"/> 				
               					</td>
               					<td>
-              							<input name = "HOUR_START_1"  id = "HOUR_START_1" type = "text"   style="width:20px;"/> - 				
-              							<input name = "HOUR_END_1"  id = "HOUR_END_1" type = "text"   style="width:20px;"/>
+              							<input name = "HOUR_START_1"  id = "HOUR_START_1" type = "text"  maxlength="2"  style="width:20px;"/> - 				
+              							<input name = "HOUR_END_1"  id = "HOUR_END_1" type = "text"  maxlength="2" style="width:20px;"/>
               					</td>
               					<td>
-              							<input name = "FEE_PER_HOUR_1"  id = "FEE_PER_HOUR_1"  type = "text"  style="width:30px;"/> 				
-              					</td>
-              			</tr>
-              			<tr>
-              					<td>
-              							<input name = "FEE_NAME_2"  id = "FEE_NAME_2" type = "text"/> 				
-              					</td>
-              					<td>
-              							<input name = "HOUR_START_2"  id = "HOUR_START_2" type = "text"   style="width:20px;"/> - 				
-              							<input name = "HOUR_END_2"  id = "HOUR_END_2" type = "text"   style="width:20px;"/>
-              					</td>
-              					<td>
-              							<input name = "FEE_PER_HOUR_2"  id = "FEE_PER_HOUR_2"  type = "text"  style="width:30px;"/> 				
+              							<input name = "FEE_PER_HOUR_1"  id = "FEE_PER_HOUR_1"  type = "text" maxlength="3" style="width:30px;"/> 				
               					</td>
               			</tr>
               			<tr>
               					<td>
-              							<input name = "FEE_NAME_3"  id = "FEE_NAME_3" type = "text"/> 				
+              							<input name = "FEE_NAME_2"  id = "FEE_NAME_2"  maxlength="50"  type = "text"/> 				
               					</td>
               					<td>
-              							<input name = "HOUR_START_3"  id = "HOUR_START_3" type = "text"   style="width:20px;"/> - 				
-              							<input name = "HOUR_END_3"  id = "HOUR_END_3" type = "text"   style="width:20px;"/>
+              							<input name = "HOUR_START_2"  id = "HOUR_START_2" type = "text"  maxlength="2" style="width:20px;"/> - 				
+              							<input name = "HOUR_END_2"  id = "HOUR_END_2" type = "text" maxlength="2"  style="width:20px;"/>
               					</td>
               					<td>
-              							<input name = "FEE_PER_HOUR_3"  id = "FEE_PER_HOUR_3"  type = "text"  style="width:30px;"/> 				
+              							<input name = "FEE_PER_HOUR_2"  id = "FEE_PER_HOUR_2"  type = "text" maxlength="3" style="width:30px;"/> 				
+              					</td>
+              			</tr>
+              			<tr>
+              					<td>
+              							<input name = "FEE_NAME_3"  id = "FEE_NAME_3"  maxlength="50"  type = "text"/> 				
+              					</td>
+              					<td>
+              							<input name = "HOUR_START_3"  id = "HOUR_START_3" type = "text"  maxlength="2" style="width:20px;"/> - 				
+              							<input name = "HOUR_END_3"  id = "HOUR_END_3" type = "text"  maxlength="2" style="width:20px;"/>
+              					</td>
+              					<td>
+              							<input name = "FEE_PER_HOUR_3"  id = "FEE_PER_HOUR_3"  type = "text"  maxlength="3" style="width:30px;"/> 				
               					</td>
               			</tr>
               </table>
