@@ -86,11 +86,11 @@
               <h2>กำหนดอัตราค่าจอดรถ</h2>
               
               <select name="FEE_TYPE_NAME" id="FEE_TYPE_NAME">
-			    <option>ราคาปกติ</option>
-			    <option>ราคาค้างคืน</option>
+			    <option value ="DAY_TIME">ราคาปกติ</option>
+			    <option value = "NIGHT_TIME">ราคาค้างคืน</option>
 			  </select>
               <br>
-              ช่วงเวลา <input name = "START_TIME"  id = "START_TIME" input_type = "text" value = "10.00"  size="2"> - <input name = "END_TIME"  id = "END_TIME" input_type = "text"   size="2"  value = "15.00">
+              ช่วงเวลา <input name = "START_TIME"  id = "START_TIME"  size="45"  input_type = "text" value = "10:00"  > - <input name = "END_TIME"  id = "END_TIME" input_type = "text"  size="4111"  value = "02:00">
               <hr> 
               <table>
               			<tr>
