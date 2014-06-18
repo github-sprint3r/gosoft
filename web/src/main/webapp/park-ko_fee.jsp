@@ -90,9 +90,9 @@
 			    <option value = "NIGHT_TIME">ราคาค้างคืน</option>
 			  </select>
               <br>
-              ช่วงเวลา <input name = "START_TIME"  id = "START_TIME"  size="45"  input_type = "text" value = "10:00"  > - <input name = "END_TIME"  id = "END_TIME" input_type = "text"  size="4111"  value = "02:00">
+               ช่วงเวลา <input name="START_TIME"  id="START_TIME"  style="width:40px;" type="text"  value="10:00"  readOnly/> - <input name="END_TIME"  id="END_TIME"  type="text"  style="width:40px;" value="02:00" readOnly/>
               <hr> 
-              <table>
+              <table cellpadding="10">
               			<tr>
               					<td>
               						 ชื่อ
@@ -106,43 +106,43 @@
               			</tr>
               			<tr>
               					<td>
-              							<input name = "FEE_NAME_1"  id = "FEE_NAME_1" input_type = "text"> 				
+              							<input name = "FEE_NAME_1"  id = "FEE_NAME_1" type = "text"/> 				
               					</td>
               					<td>
-              							<input name = "HOUR_START_1"  id = "HOUR_START_1" input_type = "text"> - 				
-              							<input name = "HOUR_END_1"  id = "HOUR_END_1" input_type = "text">
+              							<input name = "HOUR_START_1"  id = "HOUR_START_1" type = "text"   style="width:20px;"/> - 				
+              							<input name = "HOUR_END_1"  id = "HOUR_END_1" type = "text"   style="width:20px;"/>
               					</td>
               					<td>
-              							<input name = "FEE_PER_HOUR_1"  id = "FEE_PER_HOUR_1"  input_type = "text"> 				
-              					</td>
-              			</tr>
-              			<tr>
-              					<td>
-              							<input name = "FEE_NAME_2"  id = "FEE_NAME_2" input_type = "text"> 				
-              					</td>
-              					<td>
-              							<input name = "HOUR_START_2"  id = "HOUR_START_2" input_type = "text"> - 				
-              							<input name = "HOUR_END_2"  id = "HOUR_END_2" input_type = "text">
-              					</td>
-              					<td>
-              							<input name = "FEE_PER_HOUR_2"  id = "FEE_PER_HOUR_2"  input_type = "text"> 				
+              							<input name = "FEE_PER_HOUR_1"  id = "FEE_PER_HOUR_1"  type = "text"  style="width:30px;"/> 				
               					</td>
               			</tr>
               			<tr>
               					<td>
-              							<input name = "FEE_NAME_3"  id = "FEE_NAME_3" input_type = "text"> 				
+              							<input name = "FEE_NAME_2"  id = "FEE_NAME_2" type = "text"/> 				
               					</td>
               					<td>
-              							<input name = "HOUR_START_3"  id = "HOUR_START_3" input_type = "text"> - 				
-              							<input name = "HOUR_END_3"  id = "HOUR_END_3" input_type = "text">
+              							<input name = "HOUR_START_2"  id = "HOUR_START_2" type = "text"   style="width:20px;"/> - 				
+              							<input name = "HOUR_END_2"  id = "HOUR_END_2" type = "text"   style="width:20px;"/>
               					</td>
               					<td>
-              							<input name = "FEE_PER_HOUR_3"  id = "FEE_PER_HOUR_3"  input_type = "text"> 				
+              							<input name = "FEE_PER_HOUR_2"  id = "FEE_PER_HOUR_2"  type = "text"  style="width:30px;"/> 				
+              					</td>
+              			</tr>
+              			<tr>
+              					<td>
+              							<input name = "FEE_NAME_3"  id = "FEE_NAME_3" type = "text"/> 				
+              					</td>
+              					<td>
+              							<input name = "HOUR_START_3"  id = "HOUR_START_3" type = "text"   style="width:20px;"/> - 				
+              							<input name = "HOUR_END_3"  id = "HOUR_END_3" type = "text"   style="width:20px;"/>
+              					</td>
+              					<td>
+              							<input name = "FEE_PER_HOUR_3"  id = "FEE_PER_HOUR_3"  type = "text"  style="width:30px;"/> 				
               					</td>
               			</tr>
               </table>
               <br>
-              <a class="btn" href="#" name = "REGISTER_FEE"  id = "REGISTER_FEE"  >บันทึก &raquo;</a> 	
+              <button type="button" name = "REGISTER_FEE"  id = "REGISTER_FEE" >บันทึก</button>	
               </div><!--/span-->
           </div><!--/row-->
         </div><!--/span-->
