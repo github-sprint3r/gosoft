@@ -90,7 +90,7 @@
 			    <option value = "NIGHT_TIME">ราคาค้างคืน</option>
 			  </select>
               <br>
-               ช่วงเวลา <input name = "START_TIME"  id = "START_TIME"  size="45"  input_type = "text" value = "10:00"  > - <input name = "END_TIME"  id = "END_TIME" input_type = "text"  size="4111"  value = "02:00">
+               ช่วงเวลา <input name="START_TIME"  id="START_TIME"  size="2"  type="text"  value="10:00"  > - <input name="END_TIME"  id="END_TIME"  type="text"  size="5"  value="02:00">
              <hr> 
               <table>
               			<tr>
