@@ -6,7 +6,7 @@ Library    Selenium2Library
 
 *** Testcases ***
 Test Register on Promotion Page 
-	Open Browser    http://192.168.100.222:80/api/promotion.jsp
+	Open Browser    http://192.168.100.222:80/web/park-ko_promotion.jsp
 	Select From List    FEE_TYPE_NAME    DAY_TIME
 	Wait Until Page Contains    10:00
 	Page Should Contains    02:00
