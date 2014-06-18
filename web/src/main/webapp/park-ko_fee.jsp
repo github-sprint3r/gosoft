@@ -85,12 +85,12 @@
             <div class="span12">
               <h2>กำหนดอัตราค่าจอดรถ</h2>
               
-              <select name="fee_type_name" id="fee_type_name">
+              <select name="FEE_TYPE_NAME" id="FEE_TYPE_NAME">
 			    <option>ราคาปกติ</option>
 			    <option>ราคาค้างคืน</option>
 			  </select>
               <br>
-              ช่วงเวลา <input name = "start_time"  id = "start_time" input_type = "text"> - <input name = "end_time"  id = "end_time" input_type = "text">
+              ช่วงเวลา <input name = "START_TIME"  id = "START_TIME" input_type = "text" value = "10.00"  size="2"> - <input name = "END_TIME"  id = "END_TIME" input_type = "text"   size="2"  value = "15.00">
               <hr> 
               <table>
               			<tr>
