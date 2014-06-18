@@ -49,7 +49,7 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
-          <button type="button"  class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -70,8 +70,8 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">ตั้งค่า</li>
-              <li class="active"><a href="park-ko_fee.jsp">กำหนดอัตรค่าจอดรถ</a></li>
-               <li class><a href="park-ko_promotion.jsp">กำหนดส่วนลด</a></li>
+              <li class><a href="park-ko_fee.jsp">กำหนดอัตรค่าจอดรถ</a></li>
+              <li class="active"><a href="park-ko_promotion.jsp">กำหนดส่วนลด</a></li>
               <li class="nav-header">การจัดการ</li>
               <li><a href="#">คิดราคาค่าจอดรถ</a></li>
             </ul>
@@ -83,7 +83,7 @@
           </div>
           <div class="row-fluid">
             <div class="span12">
-              <h2>กำหนดอัตราค่าจอดรถ</h2>
+              <h2>กำหนดส่วนลด</h2>
               
               <select name="fee_type_name" id="fee_type_name">
 			    <option>ราคาปกติ</option>
@@ -98,51 +98,20 @@
               						 ชื่อ
               					</td>
               					<td>
-              						 จำนวนชั่วโมง
-              					</td>
-              					<td>
-              						 ราคา/ชั่วโมง
+              						 ส่วนลดชั่วโมง
               					</td>
               			</tr>
               			<tr>
               					<td>
-              							<input name = "FEE_NAME_1"  id = "FEE_NAME_1" input_type = "text"> 				
+              							<input name = "PROMOTION_NAME_1"  id = "PROMOTION_NAME_1" input_type = "text"> 				
               					</td>
               					<td>
-              							<input name = "HOUR_START_1"  id = "HOUR_START_1" input_type = "text"> - 				
-              							<input name = "HOUR_END_1"  id = "HOUR_END_1" input_type = "text">
-              					</td>
-              					<td>
-              							<input name = "FEE_PER_HOUR_1"  id = "FEE_PER_HOUR_1"  input_type = "text"> 				
-              					</td>
-              			</tr>
-              			<tr>
-              					<td>
-              							<input name = "FEE_NAME_2"  id = "FEE_NAME_2" input_type = "text"> 				
-              					</td>
-              					<td>
-              							<input name = "HOUR_START_2"  id = "HOUR_START_2" input_type = "text"> - 				
-              							<input name = "HOUR_END_2"  id = "HOUR_END_2" input_type = "text">
-              					</td>
-              					<td>
-              							<input name = "FEE_PER_HOUR_2"  id = "FEE_PER_HOUR_2"  input_type = "text"> 				
-              					</td>
-              			</tr>
-              			<tr>
-              					<td>
-              							<input name = "FEE_NAME_3"  id = "FEE_NAME_3" input_type = "text"> 				
-              					</td>
-              					<td>
-              							<input name = "HOUR_START_3"  id = "HOUR_START_3" input_type = "text"> - 				
-              							<input name = "HOUR_END_3"  id = "HOUR_END_3" input_type = "text">
-              					</td>
-              					<td>
-              							<input name = "FEE_PER_HOUR_3"  id = "FEE_PER_HOUR_3"  input_type = "text"> 				
+              							<input name = "DISCOUNT_HOUR_1"  id = "DISCOUNT_HOUR_1" input_type = "text">
               					</td>
               			</tr>
               </table>
               <br>
-              <a class="btn" href="#" name = "REGISTER_FEE"  id = "REGISTER_FEE"  >บันทึก &raquo;</a> 	
+              		<a class="btn" href="#" name = "REGISTER_PROMOTION"  id = "REGISTER_PROMOTION" >บันทึก &raquo;</a> 
               </div><!--/span-->
           </div><!--/row-->
         </div><!--/span-->
