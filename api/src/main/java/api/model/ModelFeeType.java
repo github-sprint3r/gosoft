@@ -6,7 +6,14 @@ public class ModelFeeType {
 	String feeTypeName;
 	String startTime;
 	String endTime;
+	FeeTypeDAOStub feeTypeDAOStub;
 	
+	public FeeTypeDAOStub getFeeTypeDAOStub() {
+		return feeTypeDAOStub;
+	}
+	public void setFeeTypeDAOStub(FeeTypeDAOStub feeTypeDAOStub) {
+		this.feeTypeDAOStub = feeTypeDAOStub;
+	}
 	public String getId() {
 		return id;
 	}
@@ -39,10 +46,11 @@ public class ModelFeeType {
 	}
 	
 	public void setFeeTypeDAO(FeeTypeDAOStub feeTypeDAOStub) {
-		
+		setFeeTypeDAOStub(feeTypeDAOStub);
 		
 	}
 	public void inquiry() {
-		setStartTime("10:00");
+		getFeeTypeDAOStub().inquiry(this);
+		
 	}
 }
