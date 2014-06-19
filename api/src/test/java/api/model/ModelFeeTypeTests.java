@@ -18,7 +18,7 @@ public class ModelFeeTypeTests {
 		modelFeeType.inquiry();
 		assertEquals(1,feeTypeDAOStub.getCounter());
 		assertEquals("10:00",modelFeeType.getStartTime());
-		
+		assertEquals("02:00",modelFeeType.getEndTime());
 	}
 	
 }
@@ -27,6 +27,7 @@ class FeeTypeDAOStub extends FeeTypeDAO{
 	int counter = 0;
 	public void inquiry(ModelFeeType modelFeeType) {
 		modelFeeType.setStartTime("10:00");
+		modelFeeType.setEndTime("02:00");
 		counter++;
 	}
 	
