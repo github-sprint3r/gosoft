@@ -90,7 +90,7 @@
 			    <option value = "NIGHT_TIME">ราคาค้างคืน</option>
 			  </select>
               <br>
-             ช่วงเวลา <input name="START_TIME"  id="START_TIME"  style="width:40px;" type="text"  value="10:00"  readOnly/> - <input name="END_TIME"  id="END_TIME"  type="text"  style="width:40px;" value="02:00" readOnly/>
+            ช่วงเวลา <span name="START_TIME"  id="START_TIME"  style="width:40px;" type="text" >10:00</span> - <span name="END_TIME"  id="END_TIME"  type="text"  style="width:40px;" >02:00</span>
              <hr> 
               <table cellpadding="10">
               			<tr>
@@ -103,10 +103,10 @@
               			</tr>
               			<tr>
               					<td>
-              							<input name = "PROMOTION_NAME_1"  id = "PROMOTION_NAME_1" type = "text"/> 				
+              							<input name = "PROMOTION_NAME_1"  id = "PROMOTION_NAME_1" maxlength="50" type = "text"/> 				
               					</td>
               					<td>
-              							<input name = "DISCOUNT_HOUR_1"  id = "DISCOUNT_HOUR_1" type = "text" style="width:30px;"/>
+              							<input name = "DISCOUNT_HOUR_1"  id = "DISCOUNT_HOUR_1" type = "text" maxlength="2" style="width:30px;"/>
               					</td>
               			</tr>
               </table>
