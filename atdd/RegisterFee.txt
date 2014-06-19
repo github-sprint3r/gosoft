@@ -6,6 +6,7 @@ Library    Selenium2Library
 
 *** Testcases ***
 Test Register on Fee Page Success Case
+	[Tags]    done
 	Open Browser    http://192.168.100.222:80/web/park-ko_fee.jsp
 	Select From List    FEE_TYPE_NAME    DAY_TIME
 	Input Text    FEE_NAME_1    ชั่วโมงแรกฟรี
@@ -22,6 +23,9 @@ Test Register on Fee Page Success Case
 	Input Text    FEE_PER_HOUR_3    50
 	Click Button    REGISTER_FEE
 	Alert Should Be Present    Completed
+	Close Browser	
+Test Register on Fee Page Nigth Case
+	Open Browser    http://192.168.100.222:80/web/park-ko_fee.jsp
 	Select From List    FEE_TYPE_NAME    NIGHT_TIME
 	Input Text    FEE_NAME_1    จอดค้างคืน
 	Input Text    HOUR_START_1    1
@@ -29,5 +33,5 @@ Test Register on Fee Page Success Case
 	Input Text    FEE_PER_HOUR_1    200
 	Click Button    REGISTER_FEE
 	Alert Should Be Present    Completed
-	Close Browser
+	Close Browser		
 *** Keywords ***
