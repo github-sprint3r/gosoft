@@ -91,6 +91,7 @@
 			  </select>
               <br>
                ช่วงเวลา <input name="START_TIME"  id="START_TIME"  style="width:40px;" type="text"  value="10:00"  readOnly/> - <input name="END_TIME"  id="END_TIME"  type="text"  style="width:40px;" value="02:00" readOnly/>
+              <label for="Foo" id="Label_Foo" />
               <hr> 
               <table cellpadding="10">
               			<tr>
