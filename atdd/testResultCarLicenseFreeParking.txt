@@ -1,4 +1,4 @@
-*** Settings ***
+﻿*** Settings ***
 Library    Selenium2Library
 
 *** Variables ***
@@ -6,6 +6,7 @@ Library    Selenium2Library
 
 *** Testcases ***
 Test Result Car License Free Parking
+	[Tags]    done
 	Open Browser    http://192.168.100.222/park-ko/CarLicenseInit.jsp
 	Input Text    carlicensetxt    กท9999
 	Select From List By Value    provinceddl    2
@@ -72,6 +73,6 @@ Test Result Car License Free Parking
 	Wait Until Page Contains    ค้นหา
 	
 	Close Browser
-
+	
 
 *** Keywords ***
