@@ -2,13 +2,18 @@ package api.model;
 
 import java.util.List;
 
+import api.dao.FeeDAO;
+
 public class ModelFee {
 	String feeType;
+	String startTime;
+	String endTime;
 	List<String> id;
 	List<String> feeName;
 	List<String> hourStart;
 	List<String> hourEnd;
 	List<String> feePerHour;
+	private FeeDAO feeDAO;
 
 	public String getFeeType() {
 		return feeType;
@@ -58,4 +63,35 @@ public class ModelFee {
 		this.feePerHour = feePerHour;
 	}
 
+	public FeeDAO getFreeDAO() {
+		return feeDAO;
+	}
+
+	public void setFeeDAO(FeeDAO feeDAO) {
+		this.feeDAO = feeDAO;
+	}
+
+	public FeeDAO getFeeDAO() {
+		return feeDAO;
+	}
+
+	public String getStartTime() {
+		return startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+
+	public String getEndTime() {
+		return endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public void inquiry() {
+		getFeeDAO().inquiry(this);	
+	}
 }
