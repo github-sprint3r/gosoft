@@ -8,14 +8,9 @@ Library    Selenium2Library
 Test Register on Promotion Page 
 	Open Browser    http://192.168.100.222:80/web/park-ko_promotion.jsp
 	Select From List    FEE_TYPE_NAME    DAY_TIME
-	Wait Until Page Contains    10:00
-	Page Should Contains    02:00
 	Input Text    PROMOTION_NAME_1    ดูหนัง 2 ที่
 	Input Text    DISCOUNT_HOUR_1    3
 	Click Button    REGISTER_PROMOTION
-	Wait Until Page Contains    10:00
-	Page Should Contains    02:00
-	Page Should Contains    ดูหนัง 2 ที่
-	Page Should Contains    3
+	Alert Should Be Present    Completed
 	Close Browser
 *** Keywords ***

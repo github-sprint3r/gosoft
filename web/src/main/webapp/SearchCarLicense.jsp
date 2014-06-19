@@ -70,8 +70,7 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">ตั้งค่า</li>
-              <li class><a href="park-ko_fee.jsp">กำหนดอัตราค่าจอดรถ</a></li>
-              <li class="active"><a href="park-ko_promotion.jsp">กำหนดส่วนลด</a></li>
+              <li class="active"><a href="#">กำหนดอัตรค่าจอดรถ</a></li>
               <li class="nav-header">การจัดการ</li>
               <li><a href="#">คิดราคาค่าจอดรถ</a></li>
             </ul>
@@ -83,36 +82,22 @@
           </div>
           <div class="row-fluid">
             <div class="span12">
-              <h2>กำหนดส่วนลด</h2>
+             
+             <!-- ==================================== start content================================================================================================================================== -->
+              <h2>Heading</h2>
+              <fieldset><legend>ค้นหา</legend>
+             	<table>
+             		<tr><td>หมายเลขทะเบียนรถ(*) :</td><td><input type="text" id="carlicensetxt" />&nbsp;<span id = "carlicensemassage"></span></td></tr>
+             		<tr><td>จังหวัด(*) :</td><td><select id="provinceddl">
+             		<option value="">--กรุณาเลือก--</option>
+             		</select></td></tr>
+             		<tr><td colspan="2" style="text-align:center"><button id="searchbtn">ค้นหา</button></td><td></td></tr>
+             	</table>
+              </fieldset>
+            <!-- ==================================== end content================================================================================================================================== -->
               
-              <select name="FEE_TYPE_NAME" id="FEE_TYPE_NAME">
-			  <option value ="DAY_TIME">ราคาปกติ</option>
-			    <option value = "NIGHT_TIME">ราคาค้างคืน</option>
-			  </select>
-              <br>
-            ช่วงเวลา <span name="START_TIME"  id="START_TIME"  style="width:40px;" type="text" >10:00</span> - <span name="END_TIME"  id="END_TIME"  type="text"  style="width:40px;" >02:00</span>
-             <hr> 
-              <table cellpadding="10">
-              			<tr>
-              					<td>
-              						 ชื่อ
-              					</td>
-              					<td>
-              						 ส่วนลดชั่วโมง
-              					</td>
-              			</tr>
-              			<tr>
-              					<td>
-              							<input name = "PROMOTION_NAME_1"  id = "PROMOTION_NAME_1" maxlength="50" type = "text"/> 				
-              					</td>
-              					<td>
-              							<input name = "DISCOUNT_HOUR_1"  id = "DISCOUNT_HOUR_1" type = "text" maxlength="2" style="width:30px;"/>
-              					</td>
-              			</tr>
-              </table>
-              <br>
-              		 <button type="button" name = "REGISTER_PROMOTION"  id = "REGISTER_PROMOTION" >บันทึก</button> 
-              </div><!--/span-->
+              
+            </div><!--/span-->
           </div><!--/row-->
         </div><!--/span-->
       </div><!--/row-->

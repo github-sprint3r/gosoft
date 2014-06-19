@@ -5,66 +5,29 @@ Library    Selenium2Library
 
 
 *** Testcases ***
-Test Register on Fee Page 
+Test Register on Fee Page Success Case
 	Open Browser    http://192.168.100.222:80/web/park-ko_fee.jsp
 	Select From List    FEE_TYPE_NAME    DAY_TIME
-	Wait Until Page Contains    10:00
-	Page Should Contains    02:00
 	Input Text    FEE_NAME_1    ชั่วโมงแรกฟรี
 	Input Text    HOUR_START_1    1
 	Input Text    HOUR_END_1    1
 	Input Text    FEE_PER_HOUR_1    0
-	Click Button    REGISTER_FEE
-	Wait Until Page Contains    10:00
-	Page Should Contains    02:00
-	Page Should Contains    ชั่วโมงแรกฟรี
-	Page Should Contains    1
-	Page Should Contains    0
 	Input Text    FEE_NAME_2    2 ชั่วโมงต่อไป
 	Input Text    HOUR_START_2    2
 	Input Text    HOUR_END_2    3
 	Input Text    FEE_PER_HOUR_2    20
-	Click Button    REGISTER_FEE
-	Wait Until Page Contains    10:00
-	Page Should Contains    02:00
-	Page Should Contains    ชั่วโมงแรกฟรี
-	Page Should Contains    1
-	Page Should Contains    0
-	Page Should Contains    2 ชั่วโมงต่อไป
-	Page Should Contains    2
-	Page Should Contains    3
-	Page Should Contains    20
 	Input Text    FEE_NAME_3    ชั่วโมงต่อไป
 	Input Text    HOUR_START_3    4
 	Input Text    HOUR_END_3   99
 	Input Text    FEE_PER_HOUR_3    50
 	Click Button    REGISTER_FEE
-	Wait Until Page Contains    10:00
-	Page Should Contains    02:00
-	Page Should Contains    ชั่วโมงแรกฟรี
-	Page Should Contains    1
-	Page Should Contains    0
-	Page Should Contains    2 ชั่วโมงต่อไป
-	Page Should Contains    2
-	Page Should Contains    3
-	Page Should Contains    20
-	Page Should Contains    ชั่วโมงต่อไป
-	Page Should Contains    4
-	Page Should Contains    99
-	Page Should Contains    50
+	Alert Should Be Present    Completed
 	Select From List    FEE_TYPE_NAME    NIGHT_TIME
-	Wait Until Page Contains    02:01
-	Page Should Contains    09:59
 	Input Text    FEE_NAME_1    จอดค้างคืน
 	Input Text    HOUR_START_1    1
 	Input Text    HOUR_END_1    99
 	Input Text    FEE_PER_HOUR_1    200
 	Click Button    REGISTER_FEE
-	Wait Until Page Contains    02:01
-	Page Should Contains    09:59
-	Page Should Contains    จอดค้างคืน
-	Page Should Contains    1
-	Page Should Contains    99
-	Page Should Contains    200
+	Alert Should Be Present    Completed
 	Close Browser
 *** Keywords ***
