@@ -7,69 +7,69 @@ Library    Selenium2Library
 *** Testcases ***
 Test Result Car License Night No Discount
 	Open Browser    http://192.168.100.222/park-ko/CarLicenseInit.jsp
-	Input Text    carlicensetxt    1ʡ570
+	Input Text    carlicensetxt    1สก570
 	Select From List By Value    provinceddl    14
 	Click Button    searchbtn
-	Wait Until Page Contains    �š�ä���
+	Wait Until Page Contains    ผลการค้นหา
 	
-	Wait Until Page Contains    �����Ū����¹ö
-	Textfield Should Contain    carlicensetxt    1ʡ570
+	Wait Until Page Contains    หมายเลชทะเบียนรถ
+	Textfield Should Contain    carlicensetxt    1สก570
 	
-	Wait Until Page Contains    �ѹ��Ҩʹ
-	Textfield Should Contain    startdatetxt    �ѹ�ѹ����� 16 �Զع�¹ �.�.2557 ���� 14:00 �.
+	Wait Until Page Contains    วันเข้าจอด
+	Textfield Should Contain    startdatetxt    วันจันทร์ที่ 16 มิถุนายน พ.ศ.2557 เวลา 14:00 น.
 	
-	Wait Until Page Contains    �ѹ�͡�ʹ
-	Textfield Should Contain    enddatetxt    �ѹ�ѹ����� 17 �Զع�¹ �.�.2557 ���� 02:01 �.
+	Wait Until Page Contains    วันออกจอด
+	Textfield Should Contain    enddatetxt    วันจันทร์ที่ 17 มิถุนายน พ.ศ.2557 เวลา 02:01 น.
 	
-	Wait Until Page Contains    ������Ҩʹ
+	Wait Until Page Contains    รวมเวลาจอด
 	Textfield Should Contain    totalhourtxt    13
 	Textfield Should Contain    totalmintxt    0
 	
-	Wait Until Page Contains    ��ҷ��ʹ���
+	Wait Until Page Contains    ค่าที่จอดรวม
 	Textfield Should Contain    netpricetxt    690
-	Wait Until Page Contains    �ҷ
+	Wait Until Page Contains    บาท
 	
-	Wait Until Page Contains    ���ǹŴ
+	Wait Until Page Contains    ส่่วนลด
 	Select From List By Value    promotionddl   
 	
-	Wait Until Page Contains    �ӹǹ�Թ����Ѻ
+	Wait Until Page Contains    จำนวนเงินที่รับ
 	Textfield Should Contain    receiveamounttxt    1000
 	Press Key   receiveamounttxt    \13
 	
-	Wait Until Page Contains    �Թ�͹
+	Wait Until Page Contains    เงินทอน
 	
-	Wait Until Page Contains    ���ѵ����� 1,000 �ҷ
+	Wait Until Page Contains    ธนบัตรใบล่ะ 1,000 บาท
 	Textfield Should Contain    cash1000txt    0
 	
-	Wait Until Page Contains    ���ѵ����� 500 �ҷ
+	Wait Until Page Contains    ธนบัตรใบล่ะ 500 บาท
 	Textfield Should Contain    cash500txt    0
 	
-	Wait Until Page Contains    ���ѵ����� 100 �ҷ
+	Wait Until Page Contains    ธนบัตรใบล่ะ 100 บาท
 	Textfield Should Contain    cash100txt    3	
 	
-	Wait Until Page Contains    ���ѵ����� 50 �ҷ
+	Wait Until Page Contains    ธนบัตรใบล่ะ 50 บาท
 	Textfield Should Contain    cash50txt    0
 	
-	Wait Until Page Contains    ���ѵ����� 20 �ҷ
+	Wait Until Page Contains    ธนบัตรใบล่ะ 20 บาท
 	Textfield Should Contain    cash20txt    0
 	
-	Wait Until Page Contains    ����­��� 10 �ҷ
+	Wait Until Page Contains    เหรียญล่ะ 10 บาท
 	Textfield Should Contain    cash10txt    1
 	
-	Wait Until Page Contains    ����­��� 5 �ҷ
+	Wait Until Page Contains    เหรียญล่ะ 5 บาท
 	Textfield Should Contain    cash5txt    0
 	
-	Wait Until Page Contains    ����­��� 1 �ҷ
+	Wait Until Page Contains    เหรียญล่ะ 1 บาท
 	Textfield Should Contain    cash1txt    0
 	
-	Wait Until Page Contains    ����­��� 50 ʵҧ��
+	Wait Until Page Contains    เหรียญล่ะ 50 สตางค์
 	Textfield Should Contain    cash50stxt    0
 		
-	Wait Until Page Contains    ����­��� 25 ʵҧ��
+	Wait Until Page Contains    เหรียญล่ะ 25 สตางค์
 	Textfield Should Contain    cash25stxt    0
 	
 	Click Button    finishbtn 
-	Wait Until Page Contains    ����
+	Wait Until Page Contains    ค้นหา
 	
 	Close Browser
 
