@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import api.dao.FeeTypeDAO;
 
-public class ModelFeeTypeTests {
+public class ModelFeeTypeTest {
 	
 	@Test
 	public void testInputDAYTIMEThenReturn1000And0200() throws Exception {
@@ -22,7 +22,7 @@ public class ModelFeeTypeTests {
 		
 		modelFeeType.inquiry();
 		assertEquals("10:00",modelFeeType.getStartTime());
-		assertEquals("02:00",modelFeeType.getEndTime());
+		assertEquals("02:00",modelFeeType.getEndTime());		
 	}
 	
 	@Test
