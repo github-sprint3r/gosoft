@@ -1,4 +1,4 @@
-package api.DAO;
+package api.dao;
 
 import api.model.ModelFeeType;
 

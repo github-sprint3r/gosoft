@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import api.DAO.FeeTypeDAO;
+import api.dao.FeeTypeDAO;
 
 public class ModelFeeTypeTests {
 	
