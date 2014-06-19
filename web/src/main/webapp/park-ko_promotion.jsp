@@ -49,7 +49,7 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
-          <button type="button"  class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -70,8 +70,8 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">ตั้งค่า</li>
-              <li class="active"><a href="park-ko_fee.jsp">กำหนดอัตราค่าจอดรถ</a></li>
-               <li class><a href="park-ko_promotion.jsp">กำหนดส่วนลด</a></li>
+              <li class><a href="park-ko_fee.jsp">กำหนดอัตราค่าจอดรถ</a></li>
+              <li class="active"><a href="park-ko_promotion.jsp">กำหนดส่วนลด</a></li>
               <li class="nav-header">การจัดการ</li>
               <li><a href="#">คิดราคาค่าจอดรถ</a></li>
             </ul>
@@ -83,67 +83,35 @@
           </div>
           <div class="row-fluid">
             <div class="span12">
-              <h2>กำหนดอัตราค่าจอดรถ</h2>
+              <h2>กำหนดส่วนลด</h2>
               
               <select name="FEE_TYPE_NAME" id="FEE_TYPE_NAME">
-			    <option value ="DAY_TIME">ราคาปกติ</option>
+			  <option value ="DAY_TIME">ราคาปกติ</option>
 			    <option value = "NIGHT_TIME">ราคาค้างคืน</option>
 			  </select>
               <br>
-               ช่วงเวลา <input name="START_TIME"  id="START_TIME"  style="width:40px;" type="text"  value="10:00"  readOnly/> - <input name="END_TIME"  id="END_TIME"  type="text"  style="width:40px;" value="02:00" readOnly/>
-              <label for="Foo" id="Label_Foo" />
-              <hr> 
+             ช่วงเวลา <input name="START_TIME"  id="START_TIME"  style="width:40px;" type="text"  value="10:00"  readOnly/> - <input name="END_TIME"  id="END_TIME"  type="text"  style="width:40px;" value="02:00" readOnly/>
+             <hr> 
               <table cellpadding="10">
               			<tr>
               					<td>
               						 ชื่อ
               					</td>
               					<td>
-              						 จำนวนชั่วโมง
-              					</td>
-              					<td>
-              						 ราคา/ชั่วโมง
+              						 ส่วนลดชั่วโมง
               					</td>
               			</tr>
               			<tr>
               					<td>
-              							<input name = "FEE_NAME_1"  id = "FEE_NAME_1"  maxlength="50"  type = "text"/> 				
+              							<input name = "PROMOTION_NAME_1"  id = "PROMOTION_NAME_1" type = "text"/> 				
               					</td>
               					<td>
-              							<input name = "HOUR_START_1"  id = "HOUR_START_1" type = "text"  maxlength="2"  style="width:20px;"/> - 				
-              							<input name = "HOUR_END_1"  id = "HOUR_END_1" type = "text"  maxlength="2" style="width:20px;"/>
-              					</td>
-              					<td>
-              							<input name = "FEE_PER_HOUR_1"  id = "FEE_PER_HOUR_1"  type = "text" maxlength="3" style="width:30px;"/> 				
-              					</td>
-              			</tr>
-              			<tr>
-              					<td>
-              							<input name = "FEE_NAME_2"  id = "FEE_NAME_2"  maxlength="50"  type = "text"/> 				
-              					</td>
-              					<td>
-              							<input name = "HOUR_START_2"  id = "HOUR_START_2" type = "text"  maxlength="2" style="width:20px;"/> - 				
-              							<input name = "HOUR_END_2"  id = "HOUR_END_2" type = "text" maxlength="2"  style="width:20px;"/>
-              					</td>
-              					<td>
-              							<input name = "FEE_PER_HOUR_2"  id = "FEE_PER_HOUR_2"  type = "text" maxlength="3" style="width:30px;"/> 				
-              					</td>
-              			</tr>
-              			<tr>
-              					<td>
-              							<input name = "FEE_NAME_3"  id = "FEE_NAME_3"  maxlength="50"  type = "text"/> 				
-              					</td>
-              					<td>
-              							<input name = "HOUR_START_3"  id = "HOUR_START_3" type = "text"  maxlength="2" style="width:20px;"/> - 				
-              							<input name = "HOUR_END_3"  id = "HOUR_END_3" type = "text"  maxlength="2" style="width:20px;"/>
-              					</td>
-              					<td>
-              							<input name = "FEE_PER_HOUR_3"  id = "FEE_PER_HOUR_3"  type = "text"  maxlength="3" style="width:30px;"/> 				
+              							<input name = "DISCOUNT_HOUR_1"  id = "DISCOUNT_HOUR_1" type = "text" style="width:30px;"/>
               					</td>
               			</tr>
               </table>
               <br>
-              <button type="button" name = "REGISTER_FEE"  id = "REGISTER_FEE" >บันทึก</button>	
+              		 <button type="button" name = "REGISTER_PROMOTION"  id = "REGISTER_PROMOTION" >บันทึก</button> 
               </div><!--/span-->
           </div><!--/row-->
         </div><!--/span-->
