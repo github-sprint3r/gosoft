@@ -1,18 +1,20 @@
 package api.model;
 
+import api.dao.FeeTypeDAO;
+
 public class ModelFeeType {
 	String id;
 	String feeType;
 	String feeTypeName;
 	String startTime;
 	String endTime;
-	FeeTypeDAOStub feeTypeDAOStub;
+	FeeTypeDAO feeTypeDAO;
 	
-	public FeeTypeDAOStub getFeeTypeDAOStub() {
-		return feeTypeDAOStub;
+	public FeeTypeDAO getFeeTypeDAO() {
+		return feeTypeDAO;
 	}
-	public void setFeeTypeDAOStub(FeeTypeDAOStub feeTypeDAOStub) {
-		this.feeTypeDAOStub = feeTypeDAOStub;
+	public void setFeeTypeDAO(FeeTypeDAO feeTypeDAO) {
+		this.feeTypeDAO = feeTypeDAO;
 	}
 	public String getId() {
 		return id;
@@ -45,12 +47,9 @@ public class ModelFeeType {
 		this.endTime = endTime;
 	}
 	
-	public void setFeeTypeDAO(FeeTypeDAOStub feeTypeDAOStub) {
-		setFeeTypeDAOStub(feeTypeDAOStub);
-		
-	}
+	
 	public void inquiry() {
-		getFeeTypeDAOStub().inquiry(this);
+		getFeeTypeDAO().inquiry(this);
 		
 	}
 }
