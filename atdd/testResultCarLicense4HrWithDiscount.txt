@@ -1,0 +1,77 @@
+*** Settings ***
+Library    Selenium2Library
+
+*** Variables ***
+
+
+*** Testcases ***
+Test Result Car License 4 Hour With Discount
+	Open Browser   http://192.168.100.222/park-ko/CarLicenseInit.jsp
+	Input Text    carlicensetxt    กท1245
+	Select From List By Value    provinceddl    2
+	Click Button    searchbtn
+	Wait Until Page Contains    ผลการค้นหา
+	
+	Wait Until Page Contains    หมายเลชทะเบียนรถ
+	Textfield Should Contain    carlicensetxt    กท1245
+	
+	Wait Until Page Contains    วันเข้าจอด
+	Textfield Should Contain    startdatetxt    วันจันทร์ที่ 16 มิถุนายน พ.ศ.2557 เวลา 10:00 น.
+	
+	Wait Until Page Contains    วันออกจอด
+	Textfield Should Contain    enddatetxt    วันจันทร์ที่ 16 มิถุนายน พ.ศ.2557 เวลา 14:00 น.
+	
+	Wait Until Page Contains    รวมเวลาจอด
+	Textfield Should Contain    totalhourtxt    4
+	Textfield Should Contain    totalmintxt    0
+	
+	Wait Until Page Contains    ค่าที่จอดรวม
+	Textfield Should Contain    netpricetxt    50
+	Wait Until Page Contains    บาท
+	
+	Wait Until Page Contains    ส่่วนลด
+	Select From List By Value    promotionddl    1
+	
+	Wait Until Page Contains    จำนวนเงินที่รับ
+	Textfield Should Contain    receiveamounttxt    100
+	Press Key   receiveamounttxt    \13
+	
+	Wait Until Page Contains    เงินทอน
+	
+	Wait Until Page Contains    ธนบัตรใบล่ะ 1,000 บาท
+	Textfield Should Contain    cash1000txt    0
+	
+	Wait Until Page Contains    ธนบัตรใบล่ะ 500 บาท
+	Textfield Should Contain    cash500txt    0
+	
+	Wait Until Page Contains    ธนบัตรใบล่ะ 100 บาท
+	Textfield Should Contain    cash100txt    0	
+	
+	Wait Until Page Contains    ธนบัตรใบล่ะ 50 บาท
+	Textfield Should Contain    cash50txt    1
+	
+	Wait Until Page Contains    ธนบัตรใบล่ะ 20 บาท
+	Textfield Should Contain    cash20txt    0
+	
+	Wait Until Page Contains    เหรียญล่ะ 10 บาท
+	Textfield Should Contain    cash10txt    0	
+	
+	Wait Until Page Contains    เหรียญล่ะ 5 บาท
+	Textfield Should Contain    cash5txt    0
+	
+	Wait Until Page Contains    เหรียญล่ะ 1 บาท
+	Textfield Should Contain    cash1txt    0
+	
+	Wait Until Page Contains    เหรียญล่ะ 50 สตางค์
+	Textfield Should Contain    cash50stxt    0
+		
+	Wait Until Page Contains    เหรียญล่ะ 25 สตางค์
+	Textfield Should Contain    cash25stxt    0
+	
+	Click Button    finishbtn 
+	Wait Until Page Contains    ค้นหา
+	
+	Close Browser
+
+
+*** Keywords ***
