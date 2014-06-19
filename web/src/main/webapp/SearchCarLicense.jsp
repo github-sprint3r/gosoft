@@ -51,35 +51,35 @@ body {
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>  
 <script type="text/javascript">  
   
-         /*$.ajax({   
+         $.ajax({   
               url:'/web/carLicenseInit',   
               type:'GET',  
               dataType: 'json',
               success: function(data) {   
             	 // $("#provinceddl").val(data.provincename);           	 
-            	 // console.log(data.province.length);
-            	var options = '';
+            	 console.log(data);
+            	var options = '<option value ="">..กรุณาเลือก..</option>';
       			var selectedText = '';
       			$.each(data, function(index, val)
       			{
       				var selectedString = '';
       				if (val.Selected == true)
       				{
-      					selectedText = val.Text;
+      					selectedText = val.provinceid;
       					selectedString = ' selected="selected"';
       				}
-      				options += '';
-      			});
-      			$('select#provinceddl').html(options);
-            	
-            	  console.log(data);
+      				options += '<option value="' +val.provinceid+'">'+val.provincename+'</option>' ;
+      			});  
+      			
+      			$('select#provinceddl').html(options);  	
+            	  
             	  
               },
               error:function(er) {
             	  console.log(er);
                 
               }
-         }); */
+         }); 
     
 </script>  
 </head>
@@ -128,7 +128,7 @@ body {
 					<div class="span12">
 
 						<!-- ==================================== start content================================================================================================================================== -->
-						<h2>Heading</h2>
+						<h2>Park-ko : Search Car license</h2>
 						<fieldset>
 							<legend>ค้นหา</legend>
 							<table>
@@ -140,10 +140,7 @@ body {
 								<tr>
 									<td>จังหวัด(*) :</td>
 									<td>
-									<select id="provinceddl">
-											<option value="">--กรุณาเลือก--</option>
-											<option value="2">กรุงเทพมหานคร</option>
-									</select></td>
+									<select id="provinceddl"></select></td>
 								</tr>
 								<tr>
 									<td colspan="2" style="text-align: center"><button
