@@ -1,0 +1,62 @@
+*** Settings ***
+Library    Selenium2Library
+
+*** Variables ***
+
+
+*** Testcases ***
+Test Search Car License Normal Case
+	Open Browser    http://192.168.100.222/park-ko/CarLicenseInit.jsp
+	Input Text    carlicensetxt    กท9999
+	Select From List By Value    provinceddl    2
+	Click Button    searchbtn
+	Wait Until Page Contains    ผลการค้นหา
+	Close Browser
+	
+	Open Browser    http://192.168.100.222:80/park-ko/CarLicenseInit
+	Input Text    carlicensetxt    1กท5555
+	Select From List By Value    provinceddl    2
+	Click Button    searchbtn
+	Wait Until Page Contains    ผลการค้นหา
+	Close Browser
+	
+	Open Browser    http://192.168.100.222:80/park-ko/CarLicenseInit
+	Input Text    carlicensetxt    กก1
+	Select From List By Value    provinceddl    14
+	Click Button    searchbtn
+	Wait Until Page Contains    ผลการค้นหา  
+	Close Browser
+
+Test Search Car License Validate Message
+	Open Browser    http://192.168.100.222:80/park-ko/CarLicenseInit
+	Input Text    carlicensetxt    1ก
+	Select From List By Value    provinceddl    37
+	Click Button    searchbtn
+	Wait Until Page Contains    รถคุณแน่เหรอ!
+	
+	Input Text    carlicensetxt    สฬจ12345
+	Select From List By Value    provinceddl    28
+	Click Button    searchbtn
+	Wait Until Page Contains    รถคุณแน่เหรอ!
+
+	Input Text    carlicensetxt    
+	Select From List By Value    provinceddl    
+	Click Button    searchbtn
+	Wait Until Page Contains    กรุณากรอกหมายเลขทะเบียนรถด้วยนะจ๊ะ  
+	Wait Until Page Contains    กรุณาเลือกจังหวัดด้วยนะจ๊ะ
+	
+	Input Text    carlicensetxt    จอ1234
+	Select From List By Value    provinceddl    
+	Click Button    searchbtn  
+	Wait Until Page Contains    กรุณาเลือกจังหวัดด้วยนะจ๊ะ
+	
+	Input Text    carlicensetxt    
+	Select From List By Value    provinceddl    13    
+	Click Button    searchbtn  
+	Wait Until Page Contains    กรุณากรอกหมายเลขทะเบียนรถด้วยนะจ๊ะ
+	
+	Input Text    carlicensetxt    กท9999
+	Select From List By Value    provinceddl    13    
+	Click Button    searchbtn  
+	Wait Until Page Contains    รถคุณแน่เหรอ!
+*** Keywords ***
