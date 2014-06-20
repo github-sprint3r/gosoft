@@ -47,41 +47,6 @@ body {
 <link rel="apple-touch-icon-precomposed"
 	href="assets/ico/apple-touch-icon-57-precomposed.png">
 <link rel="shortcut icon" href="assets/ico/favicon.png">
-
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>  
-<script type="text/javascript">  
-  
-         $.ajax({   
-              url:'/api/carLicenseInit',   
-              type:'GET',  
-              dataType: 'json',
-              success: function(data) {   
-            	 // $("#provinceddl").val(data.provincename);           	 
-            	 console.log(data);
-            	var options = '<option value ="">..กรุณาเลือก..</option>';
-      			var selectedText = '';
-      			$.each(data, function(index, val)
-      			{
-      				var selectedString = '';
-      				if (val.Selected == true)
-      				{
-      					selectedText = val.provinceid;
-      					selectedString = ' selected="selected"';
-      				}
-      				options += '<option value="' +val.provinceid+'">'+val.provincename+'</option>' ;
-      			});  
-      			
-      			$('select#provinceddl').html(options);  	
-            	  
-            	  
-              },
-              error:function(er) {
-            	  console.log(er);
-                
-              }
-         }); 
-    
-</script>  
 </head>
 
 <body>
@@ -112,7 +77,7 @@ body {
 					<ul class="nav nav-list">
 						<li class="nav-header">ตั้งค่า</li>
 						<li class><a href="park-ko_fee.jsp">กำหนดอัตราค่าจอดรถ</a></li>
-						<li ><a href="park-ko_promotion.jsp">กำหนดส่วนลด</a></li>
+						<li><a href="park-ko_promotion.jsp">กำหนดส่วนลด</a></li>
 						<li class="nav-header">การจัดการ</li>
 						<li class="active"><a href="SearchCarLicense.jsp">คิดราคาค่าจอดรถ</a></li>
 					</ul>
@@ -126,32 +91,65 @@ body {
 				</div>
 				<div class="row-fluid">
 					<div class="span12">
+						<table cellpadding="5">
+							<tr>
+								<td width="40%">ธนบัตรใบละ</td>
+								<td width="100px">1,000 บาท</td>
+								<td><label id="cash1000txt" >ใบ</label></td>
 
-						<!-- ==================================== start content================================================================================================================================== -->
-						<h2>Park-ko : Search Car license</h2>
-						<fieldset>
-							<legend>ค้นหา</legend>
-							<table>
-								<tr>
-									<td>หมายเลขทะเบียนรถ(*) :</td>
-									<td><input type="text" id="carlicensetxt" />&nbsp;<span
-										id="carlicensemassage"></span></td>
-								</tr>
-								<tr>
-									<td>จังหวัด(*) :</td>
-									<td>
-									<select id="provinceddl"></select></td>
-								</tr>
-								<tr>
-									<td colspan="2" style="text-align: center"><button
-											id="searchbtn">ค้นหา</button></td>
-									<td></td>
-								</tr>
-							</table>
-						</fieldset>
-						<!-- ==================================== end content================================================================================================================================== -->
-
-
+							</tr>
+							<tr>
+								<td width="40%">ธนบัตรใบละ</td>
+								<td width="100px">500 บาท</td>
+								<td><label id="cash500txt" >ใบ</label></td>
+							</tr>
+							<tr>
+								<td width="40%">ธนบัตรใบละ</td>
+								<td width="100px">100 บาท</td>
+								<td><label id="cash100txt" for="100">ใบ</label></td>
+							</tr>
+							<tr>
+								<td width="40%">ธนบัตรใบละ</td>
+								<td width="100px">50 บาท</td>
+								<td><label id="cash50txt" for="50">ใบ</label></td>
+							</tr>
+							<tr>
+								<td width="40%">ธนบัตรใบละ</td>
+								<td width="100px">20 บาท</td>
+								<td><label id="cash20txt" for="20">ใบ</label></td>
+							</tr>
+							<tr>
+								<td width="40%">เหรียญละ</td>
+								<td width="100px">10 บาท</td>
+								<td><label id="cash10txt" for="10">เหรียญ</label></td>
+							</tr>
+							<tr>
+								<td width="40%">เหรียญละ</td>
+								<td width="100px">5 บาท</td>
+								<td><label id="cash5txt" for="5">เหรียญ</label></td>
+							</tr>
+							<tr>
+								<td width="40%">เหรียญละ</td>
+								<td width="100px">2 บาท</td>
+								<td><label id="cash2txt" for="2">เหรียญ</label></td>
+							</tr>
+							<tr>
+								<td width="40%">เหรียญละ</td>
+								<td width="100px">1 บาท</td>
+								<td><label id="cash1txt" for="1">เหรียญ</label></td>
+							</tr>
+							<tr>
+								<td width="40%">เหรียญละ</td>
+								<td width="100px">50 สตางค์</td>
+								<td><label id="cash50stxt" for="50s">เหรียญ</label></td>
+							</tr>
+							<tr>
+								<td width="40%">เหรียญละ</td>
+								<td width="100px">25สตางค์</td>
+								<td><label id="cash25stxt" for="25s">เหรียญ</label></td>
+							</tr>
+						</table>
+						<button id="finishbtn" name="finishbtn">เสร็จ</button>
 					</div>
 					<!--/span-->
 				</div>
