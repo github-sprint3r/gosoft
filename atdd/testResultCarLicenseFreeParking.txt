@@ -8,40 +8,32 @@ Library    Selenium2Library
 Test Result Car License Free Parking
 	[Tags]    done
 	Open Browser    http://192.168.100.222/web/SearchCarLicense.jsp
-	Input Text    carlicensetxt    กท9999
-	Select From List By Value    provinceddl    2
+	Input Text    carlicensetxt    1111
+	Select From List By Value    provinceddl    1
 	Click Button    searchbtn
-	Wait Until Page Contains    ผลการค้นหา
 	
-	Wait Until Page Contains    หมายเลชทะเบียนรถ
-	Textfield Should Contain    carlicensetxt    กท9999
+	Wait Until Page Contains    หมายเลขทะเบียนรถ
+	Textfield Should Contain    carlicenseresulttxt    1111
 	
 	Wait Until Page Contains    วันเข้าจอด
-	Textfield Should Contain    startdatetxt    วันจันทร์ที่ 16 มิถุนายน พ.ศ.2557 เวลา 22:00 น.
+	Textfield Should Contain    startdateresulttxt    วันจันทร์ที่  16 มิถุนายน พ.ศ.2557 เวลา 22:00 น.
 	
 	Wait Until Page Contains    วันออกจอด
-	Textfield Should Contain    enddatetxt    วันจันทร์ที่ 16 มิถุนายน พ.ศ.2557 เวลา 23:00 น.
+	Textfield Should Contain    enddateresulttxt    วันจันทร์ที่  16 มิถุนายน พ.ศ.2557 เวลา 23:00 น.
 	
 	Wait Until Page Contains    รวมเวลาจอด
-	Textfield Should Contain    totalhourtxt    1
-	Textfield Should Contain    totalmintxt    0
+	Textfield Should Contain    totalhoursresulttxt    1
+	Textfield Should Contain    totalminresulttxt    0
 	
 	Wait Until Page Contains    ค่าที่จอดรวม
-	Textfield Should Contain    netpricetxt    0
+	Textfield Should Contain    netpriceresulttxt    0
 	Wait Until Page Contains    บาท
 	
-	Wait Until Page Contains    ส่่วนลด
-	Select From List By Value    promotionddl   
-	
 	Wait Until Page Contains    จำนวนเงินที่รับ
-	Textfield Should Contain    receiveamounttxt    0
-	Press Key   receiveamounttxt    \13
 	
 	Wait Until Page Contains    เงินทอน
-	Textfield Should Contain    changeamounttxt    0
 	
 	Click Button    finishbtn 
-	Wait Until Page Contains    ค้นหา
 	
 	Close Browser
 	
