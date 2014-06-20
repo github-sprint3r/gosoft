@@ -65,16 +65,17 @@ public class FeeDAO {
 		List<String> hourEnds = modelFee.getHourEnd();
 		List<String> feePerHours = modelFee.getFeePerHour();
 		
-		String queryInsertIntoPKO_FEE = "INSERT INTO PKO_FEE (FEE_NAME, HOUR_START, HOUR_END, FEE_PER_HOUR) VALUES (?, ?, ?, ?)";
+		String queryInsertIntoPKO_FEE = "INSERT INTO PKO_FEE (FEE_TYPE, FEE_NAME, HOUR_START, HOUR_END, FEE_PER_HOUR) VALUES (?, ?, ?, ?, ?)";
 		PreparedStatement prepareStatement = connection.prepareStatement(queryInsertIntoPKO_FEE);
 		
 		for (int dataRow = 0; dataRow < feeNames.size(); dataRow++) {
 			String feeName = feeNames.get(dataRow);
 			if(feeName != null && !feeName.equals("")) {
-				prepareStatement.setString(1, feeName);
-				prepareStatement.setString(2, hourStarts.get(dataRow));
-				prepareStatement.setString(3, hourEnds.get(dataRow));
-				prepareStatement.setString(4, feePerHours.get(dataRow));
+				prepareStatement.setString(1, feeType);
+				prepareStatement.setString(2, feeName);
+				prepareStatement.setString(3, hourStarts.get(dataRow));
+				prepareStatement.setString(4, hourEnds.get(dataRow));
+				prepareStatement.setString(5, feePerHours.get(dataRow));
 				prepareStatement.executeUpdate();
 			}
 		}
