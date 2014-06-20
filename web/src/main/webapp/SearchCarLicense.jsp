@@ -72,14 +72,39 @@ body {
       			});  
       			
       			$('select#provinceddl').html(options);  	
-            	  
-            	  
+      			$('#SearchCarLicense').show();
+      			$('#ResultCarLicense').hide();
               },
               error:function(er) {
             	  console.log(er);
                 
               }
          }); 
+         
+         
+         function searchCarLicense() {
+ 		    var searchCriteria = new Object();
+ 		    searchCriteria.carlicensetxt = $('#carlicensetxt').val();
+ 		    searchCriteria.provinceddl = $('#provinceddl').val();
+ 		    	
+ 			$.ajax({   
+ 	            url:'/api/SearchCarLicense',   
+ 	            type:'POST',  
+ 	            dataType: 'json',
+ 	            data: JSON.stringify(searchCriteria),
+ 	            contentType: 'application/json',
+ 	            mimeType: 'application/json',
+ 	            success: function(data) {   
+ 	            	$('#SearchCarLicense').hide();
+ 	            	$('#ResultCarLicense').show();
+ 					
+ 	            	
+ 	            },
+ 	            error:function(error) {
+ 	                alert("error message :" + error);
+ 	            }
+ 	       }); 
+ 		}
     
 </script>  
 </head>
@@ -125,7 +150,7 @@ body {
 					<h1>สวัสดี, กรัณย์</h1>
 				</div>
 				<div class="row-fluid">
-					<div class="span12">
+					<div class="span12" id="SearchCarLicense">
 
 						<!-- ==================================== start content================================================================================================================================== -->
 						<h2>Park-ko : Search Car license</h2>
@@ -144,7 +169,7 @@ body {
 								</tr>
 								<tr>
 									<td colspan="2" style="text-align: center"><button
-											id="searchbtn">ค้นหา</button></td>
+											id="searchbtn" onclick="searchCarLicense();">ค้นหา</button></td>
 									<td></td>
 								</tr>
 							</table>
@@ -153,6 +178,9 @@ body {
 
 
 					</div>
+					
+					<%@ include file="ResultCarLicense.jsp" %>
+					
 					<!--/span-->
 				</div>
 				<!--/row-->

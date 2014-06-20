@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.codehaus.jackson.map.ObjectMapper;
 
+import api.dao.SearchCarLicenseDAO;
 import api.model.SearchCriteria;
+import api.model.Transaction;
 
 /**
  * Servlet implementation class SearchCarLicenseServlet
@@ -20,39 +22,50 @@ import api.model.SearchCriteria;
 @WebServlet("/SearchCarLicense")
 public class SearchCarLicenseServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public SearchCarLicenseServlet() {
-        super();
-    }
+	SearchCarLicenseDAO searchCarLicenseDAO = new SearchCarLicenseDAO();
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public SearchCarLicenseServlet() {
+		super();
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(request.getInputStream()));
-        String json = "";
-        if(br != null){
-            json = br.readLine();
-        }
-        
-		ObjectMapper mapper = new ObjectMapper();
-		 
-       	SearchCriteria searchCriteria = mapper.readValue(json, SearchCriteria.class);
-		
-		System.out.println("Carlicense : "+searchCriteria.getCarlicensetxt());
-		System.out.println("Province : "+searchCriteria.getProvinceddl());
-		
-		
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		try {
+			BufferedReader br = new BufferedReader(new InputStreamReader(request.getInputStream()));
+			String json = "";
+			if (br != null) {
+				json = br.readLine();
+			}
+			
+			System.out.println("json :" + json);
+
+			ObjectMapper mapper = new ObjectMapper();
+			SearchCriteria searchCriteria = mapper.readValue(json, SearchCriteria.class);
+			
+			Transaction transaction = new Transaction();
+			 
+			mapper.writeValue(response.getOutputStream(), transaction);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+
+		}
+
 	}
-	
+
 }
