@@ -48,5 +48,6 @@ public class FeeDAO {
 		modelFee.setHourStart(hourStarts);
 		modelFee.setHourEnd(hourEnds);
 		modelFee.setFeePerHour(feePerHours);
+		DatabaseUtils.releaseResources(connection, statement, resultSet);
 	}
 }
