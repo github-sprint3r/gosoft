@@ -3,29 +3,31 @@
 <script type="text/javascript"> 
 	function backToSearchCarLicense() {
 		$('#SearchCarLicense').show();
-     	$('#ResultCarLicense').hide();    
-     	
-     	
-     	
+     	$('#ResultCarLicense').hide();
      	$('#carlicensemassage').html("");
 		$('#provincemassage').html(""); 
-		
 		$('#carlicensetxt').val("");
 		$('#provinceddl').val("");
  	}
 	
+	function selectDiscount() {
+		if ($('#promotionddl').val() == '1') {
+			$('#netpriceresulttxt').val(parseFloat($('#discountpriceresulttxt').val()));
+		}
+	}
+	
+	
 	function calculateChange(event) {
-		if (event.keyCode == 13) {	
-			var netprice = parseFloat($('#netpriceresulttxt').val());
-			if ($('#promotionddl').val() == '1') {
-				netprice =  parseFloat($('#discountpriceresulttxt').val());
+		if (event.keyCode == 13) {				
+			if (!isNaN($('#receiveamountresulttxt').val())) {
+				var netprice = parseFloat($('#netpriceresulttxt').val());
+				if ($('#promotionddl').val() == '1') {
+					netprice =  parseFloat($('#discountpriceresulttxt').val());
+				}				
+				var receiveamount = parseFloat($('#receiveamountresulttxt').val());  
+				var cashchange = receiveamount - netprice;
+				$('#changeamountresulttxt').val(cashchange);
 			}
-			
-			var receiveamount = parseFloat($('#receiveamountresulttxt').val());  
-			var cashchange = receiveamount - netprice;
-			$('#changeamountresulttxt').val(cashchange);
-			
-			
 	    }
  	}
 	
@@ -62,7 +64,7 @@
 			<td></td>
 		<tr>
 			<td>ส่วนลด:</td>
-			<td><select name="promotionddl" id="promotionddl">
+			<td><select name="promotionddl" id="promotionddl" onchange="selectDiscount();">
 					<option value="0">..กรุณาเลือก..</option>
 					<option value="1">ส่วนลดตั๋วหนัง</option>
 			</select></td>
@@ -70,7 +72,7 @@
 		<tr>
 			<td>จำนวนเงินที่รับ:</td>
 			<td><input type="text" id="receiveamountresulttxt"
-				name="receiveamountresulttxt" onkeypress="calculateChange(event)" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกเฉพาะตัวเลขซิจ๊ะ'); this.value='';}"/> บาท</td>
+				name="receiveamountresulttxt" onkeypress="calculateChange(event)" onKeyUp="if(isNaN(this.value)){ this.value='';}"/> บาท</td>
 			<td></td>
 		</tr>
 		<tr>

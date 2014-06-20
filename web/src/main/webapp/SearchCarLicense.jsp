@@ -57,8 +57,6 @@ body {
               type:'GET',  
               dataType: 'json',
               success: function(data) {   
-            	 // $("#provinceddl").val(data.provincename);           	 
-            	 console.log(data);
             	var options = '<option value ="">..กรุณาเลือก..</option>';
       			var selectedText = '';
       			$.each(data, function(index, val)
