@@ -20,26 +20,31 @@ import api.model.ModelFeeType;
 @WebServlet("/feeServlet")
 public class FeeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
-		BufferedReader br = new BufferedReader(new InputStreamReader(request.getInputStream()));
-        String json = "";
-        if(br != null){
-            json = br.readLine();
-        }
+		BufferedReader br = new BufferedReader(new InputStreamReader(
+				request.getInputStream()));
+		String json = "";
+		if (br != null) {
+			json = br.readLine();
+		}
 
-    	ObjectMapper mapper = new ObjectMapper();
+		ObjectMapper mapper = new ObjectMapper();
 
-    	ModelFee fee = mapper.readValue(json, ModelFee.class);
-    	
-    	getFeeData(fee);
-    	mapper.writeValue(response.getOutputStream(), fee);
-    	
+		ModelFee fee = mapper.readValue(json, ModelFee.class);
+
+		try {
+			getFeeData(fee);
+			mapper.writeValue(response.getOutputStream(), fee);
+		} catch (Exception e) {
+			response.sendError(HttpServletResponse.SC_BAD_REQUEST,
+					e.getMessage());
+		}
 	}
 
-	public void getFeeData(ModelFee fee) {
+	public void getFeeData(ModelFee fee) throws Exception {
 
 		ModelFeeType modelFeeType = new ModelFeeType();
 		modelFeeType.setFeeType(fee.getFeeType());
@@ -48,10 +53,7 @@ public class FeeServlet extends HttpServlet {
 		fee.setStartTime(modelFeeType.getStartTime());
 		fee.setEndTime(modelFeeType.getEndTime());
 		fee.setFeeDAO(new FeeDAO());
-		fee.inquiry();	
+		fee.inquiry();
 	}
-	
-	
-	
-	
+
 }
