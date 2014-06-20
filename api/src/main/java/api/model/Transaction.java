@@ -8,8 +8,8 @@ public class Transaction {
 	private int provinceid;
 	private Date startdate;
 	private Date enddate;
-	private String startdatetext;
-	private String enddatetext;
+	private String startdatetxt;
+	private String enddatetxt;
 	
 	public String getCarlicense() {
 		return carlicense;
@@ -35,17 +35,17 @@ public class Transaction {
 	public void setEnddate(Date enddate) {
 		this.enddate = enddate;
 	}
-	public String getStartdatetext() {
-		return startdatetext;
+	public String getStartdatetxt() {
+		return startdatetxt;
 	}
-	public void setStartdatetext(String startdatetext) {
-		this.startdatetext = startdatetext;
+	public void setStartdatetxt(String startdatetxt) {
+		this.startdatetxt = startdatetxt;
 	}
-	public String getEnddatetext() {
-		return enddatetext;
+	public String getEnddatetxt() {
+		return enddatetxt;
 	}
-	public void setEnddatetext(String enddatetext) {
-		this.enddatetext = enddatetext;
+	public void setEnddatetxt(String enddatetxt) {
+		this.enddatetxt = enddatetxt;
 	}
 	
 }
