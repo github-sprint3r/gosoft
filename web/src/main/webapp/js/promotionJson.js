@@ -11,7 +11,7 @@ function requestPromotionData(){
 	 };
 	 console.log(JSON.stringify(promotion));
 	$.ajax({
-    	url: "/api/PromotionServlet",
+    	url: "/api/promotionServlet",
         type: 'POST',
         dataType: 'json',
         data: JSON.stringify(promotion),
