@@ -9,6 +9,7 @@ public class Transaction {
 	private String startdatetxt;
 	private String enddatetxt;
 	private int netpricetxt;
+	private int discountpricetxt;
 	
 	private String totalhourtxt;
 	private int daytimehour;
@@ -62,4 +63,11 @@ public class Transaction {
 	public void setNighttimehour(int nighttimehour) {
 		this.nighttimehour = nighttimehour;
 	}
+	public int getDiscountpricetxt() {
+		return discountpricetxt;
+	}
+	public void setDiscountpricetxt(int discountpricetxt) {
+		this.discountpricetxt = discountpricetxt;
+	}
+	
 }
