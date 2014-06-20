@@ -70,9 +70,12 @@ public class FeeDAO {
 		
 		for (int dataRow = 0; dataRow < feeNames.size(); dataRow++) {
 			String feeName = feeNames.get(dataRow);
+			
+			String	convertTothaiFeeName = new String(feeName.getBytes("ISO-8859-1"),"TIS-620");
+			
 			if(feeName != null && !feeName.equals("")) {
 				prepareStatement.setString(1, feeType);
-				prepareStatement.setString(2, feeName);
+				prepareStatement.setString(2, convertTothaiFeeName);
 				prepareStatement.setString(3, hourStarts.get(dataRow));
 				prepareStatement.setString(4, hourEnds.get(dataRow));
 				prepareStatement.setString(5, feePerHours.get(dataRow));
