@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Bootstrap, from Twitter</title>
+<title>Park-Ko</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -48,7 +48,8 @@ body {
 	href="assets/ico/apple-touch-icon-57-precomposed.png">
 <link rel="shortcut icon" href="assets/ico/favicon.png">
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>  
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script> 
+<script type="text/javascript" src="https://github.com/BobKnothe/autoNumeric/blob/master/autoNumeric.js"></script>  
 <script type="text/javascript">  
   
          $.ajax({   
@@ -97,9 +98,12 @@ body {
  	            success: function(data) {   
  	            	$('#SearchCarLicense').hide();
  	            	$('#ResultCarLicense').show();
- 					
  	            	
- 	            },
+ 	            	$('#carlicenseresulttxt').val(data.carlicense);
+ 	            	$('#startdateresulttxt').val(data.startdatetxt);
+ 	            	$('#enddateresulttxt').val(data.enddatetxt);
+ 	            	
+ 	 	        },
  	            error:function(error) {
  	                alert("error message :" + error);
  	            }
@@ -153,7 +157,7 @@ body {
 					<div class="span12" id="SearchCarLicense">
 
 						<!-- ==================================== start content================================================================================================================================== -->
-						<h2>Park-ko : Search Car license</h2>
+						<h2>คิดราคาค่าจอดรถ</h2>
 						<fieldset>
 							<legend>ค้นหา</legend>
 							<table>
