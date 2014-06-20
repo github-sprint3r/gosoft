@@ -15,7 +15,7 @@ public class FeeDAO {
 		String feeType = modelFee.getFeeType();
 		String query = "SELECT ID, FEE_NAME, HOUR_START, HOUR_END, FEE_PER_HOUR "
 				+ "FROM PKO_FEE "
-				+ "WHERE PEE_TYPE = '"+feeType+"' "
+				+ "WHERE FEE_TYPE = '"+feeType+"' "
 				+ "ORDER BY ID";
 		
 		Connection connection = DatabaseUtils.getConnection();
