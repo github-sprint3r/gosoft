@@ -7,8 +7,16 @@
  	}
 	
 	function calculateChange(event) {
-		if (event.keyCode == 13) {			
+		if (event.keyCode == 13) {	
+			alert($('#promotionddl').val());
+			
 			var netprice = parseFloat($('#netpriceresulttxt').val());
+			if ($('#promotionddl').val() == '1') {
+				
+			} else {				
+				
+			}
+			
 			var receiveamount = parseFloat($('#receiveamountresulttxt').val());  
 			var cashchange = receiveamount - netprice;
 			$('#changeamountresulttxt').val(cashchange);
@@ -45,6 +53,7 @@
 		<tr>
 			<td>ค่าที่จอดรวม:</td>
 			<td><input type="text" id="netpriceresulttxt" name="netpriceresulttxt" />
+			<input type="hidden" id="discountpriceresulttxt" name="discountpriceresulttxt" />
 				บาท</td>
 			<td></td>
 		<tr>

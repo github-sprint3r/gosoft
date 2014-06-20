@@ -121,14 +121,11 @@ body {
  	            	$('#ResultCarLicense').show(); 	            	
  	            	$('#carlicenseresulttxt').val(data.carlicense);
  	            	$('#startdateresulttxt').val(data.startdatetxt);
- 	            	$('#enddateresulttxt').val(data.enddatetxt);            	
- 	            	
- 	            	
- 	            	var totalHour = parseInt(data.daytimehour) + parseInt(data.nighttimehour);
- 	            	
- 	            	$('#totalhoursresulttxt').val(totalHour);
- 	            	
+ 	            	$('#enddateresulttxt').val(data.enddatetxt);
+ 	            	$('#totalhoursresulttxt').val(totalhourtxt); 	            	
  	            	$('#netpriceresulttxt').val(data.netpricetxt);
+ 	            	$('#discountpriceresulttxt').val(data.discountpricetxt);
+ 	            	
  	            },
  	            error:function(error) {
  	                alert("error message :" + error);
