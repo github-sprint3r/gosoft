@@ -113,4 +113,20 @@ public class ModelFeeTest {
 		modelFee.setHourEnd(hourEnds);
 		assertTrue(modelFee.checkData());
 	}
+	
+	@Test
+	public void checkDataStartEqualStart() {
+		ModelFee modelFee = new ModelFee();
+		List<String> hourStarts = new ArrayList<String>();
+		hourStarts.add("1");
+		hourStarts.add("5");
+		hourStarts.add("10");
+		List<String> hourEnds = new ArrayList<String>();
+		hourEnds.add("1");
+		hourEnds.add("9");
+		hourEnds.add("99");
+		modelFee.setHourStart(hourStarts);
+		modelFee.setHourEnd(hourEnds);
+		assertTrue(modelFee.checkData());
+	}
 }
