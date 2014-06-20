@@ -1,6 +1,8 @@
 package api.model;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import api.dao.FeeDAO;
 
@@ -96,6 +98,38 @@ public class ModelFee {
 	}
 
 	public void save() throws Exception {
-		getFeeDAO().save(this);	
+		if(checkData())
+			getFeeDAO().save(this);
+		else
+			throw new Exception();
+	}
+
+	public boolean checkData() {
+		Set<String> checkDuplicate = new HashSet<String>();
+		for (int start = 0; start < getHourStart().size(); start++) {
+			if(!getHourStart().get(start).equals(""))
+				if(!checkDuplicate.add(getHourStart().get(start)))
+					return false;
+		}
+		
+		checkDuplicate = new HashSet<String>();
+		for (int end = 0; end < getHourEnd().size(); end++) {
+			if(!getHourEnd().get(end).equals(""))
+				if(!checkDuplicate.add(getHourEnd().get(end)))
+				return false;
+		}
+		
+		for (int start = 0; start < getHourStart().size(); start++) {
+			for (int end = 0; end < getHourEnd().size(); end++) {
+				if(!getHourStart().get(start).equals("") || !getHourStart().get(end).equals("")) {
+					if(start != end &&  !getHourStart().get(start).equals("") &&  !getHourStart().get(end).equals("")) {
+						if(Integer.parseInt(getHourStart().get(start)) > Integer.parseInt(getHourStart().get(end)))
+							if(Integer.parseInt(getHourStart().get(start)) <= Integer.parseInt(getHourEnd().get(end)))
+								return false;
+					}
+				}
+			}
+		}
+		return true;
 	}
 }

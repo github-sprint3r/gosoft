@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+  <script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+  <script type="text/javascript" src="js/promotionJson.js"></script>
     <meta charset="utf-8">
     <title>Park-Ko</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -85,7 +87,7 @@
             <div class="span12">
               <h2>กำหนดส่วนลด</h2>
               
-              <select name="FEE_TYPE_NAME" id="FEE_TYPE_NAME">
+              <select name="FEE_TYPE_NAME" id="FEE_TYPE_NAME" onchange="requestPromotionData();">
 			  <option value ="DAY_TIME">ราคาปกติ</option>
 			    <option value = "NIGHT_TIME">ราคาค้างคืน</option>
 			  </select>
