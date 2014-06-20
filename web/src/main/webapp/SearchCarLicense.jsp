@@ -95,10 +95,10 @@ body {
      			$('#provincemassage').html("กรุณาเลือกจังหวัดด้วยนะจ๊ะ");     					
      		} else if (carlicensetxt == "") {     			
      			$('#carlicensemassage').html("กรุณากรอกหมายเลขทะเบียนรถด้วยนะจ๊ะ");  
-     		} else if (provinceddl == "0") {
+     		} else if (provinceddl == "") {
      			$('#provincemassage').html("กรุณาเลือกจังหวัดด้วยนะจ๊ะ");     
      		} else if (carlicensetxt.length<3 || carlicensetxt.length>7) {
-     			$('#carlicensemassage').html("รถคุณแน่หรอ !");     	
+     			$('#carlicensemassage').html("รถคุณแน่หรอ !");
      		} else{
      			searchCarLicense();
      		}
@@ -122,7 +122,7 @@ body {
  	            	$('#carlicenseresulttxt').val(data.carlicense);
  	            	$('#startdateresulttxt').val(data.startdatetxt);
  	            	$('#enddateresulttxt').val(data.enddatetxt);
- 	            	$('#totalhoursresulttxt').val(totalhourtxt); 	            	
+ 	            	$('#totalhoursresulttxt').val(data.totalhourtxt); 	            	
  	            	$('#netpriceresulttxt').val(data.netpricetxt);
  	            	$('#discountpriceresulttxt').val(data.discountpricetxt);
  	            	

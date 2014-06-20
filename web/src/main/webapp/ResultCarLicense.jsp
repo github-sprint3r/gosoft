@@ -8,13 +8,9 @@
 	
 	function calculateChange(event) {
 		if (event.keyCode == 13) {	
-			alert($('#promotionddl').val());
-			
 			var netprice = parseFloat($('#netpriceresulttxt').val());
 			if ($('#promotionddl').val() == '1') {
-				
-			} else {				
-				
+				netprice =  parseFloat($('#discountpriceresulttxt').val());
 			}
 			
 			var receiveamount = parseFloat($('#receiveamountresulttxt').val());  
