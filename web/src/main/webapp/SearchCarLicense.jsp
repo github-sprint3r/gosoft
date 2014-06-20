@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Bootstrap, from Twitter</title>
+<title>Park-Ko</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -48,11 +48,12 @@ body {
 	href="assets/ico/apple-touch-icon-57-precomposed.png">
 <link rel="shortcut icon" href="assets/ico/favicon.png">
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>  
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script> 
+<script type="text/javascript" src="https://github.com/BobKnothe/autoNumeric/blob/master/autoNumeric.js"></script>  
 <script type="text/javascript">  
   
          $.ajax({   
-              url:'/web/carLicenseInit',   
+              url:'/api/carLicenseInit',   
               type:'GET',  
               dataType: 'json',
               success: function(data) {   
@@ -72,14 +73,42 @@ body {
       			});  
       			
       			$('select#provinceddl').html(options);  	
-            	  
-            	  
+      			$('#SearchCarLicense').show();
+      			$('#ResultCarLicense').hide();
               },
               error:function(er) {
             	  console.log(er);
                 
               }
          }); 
+         
+         
+         function searchCarLicense() {
+ 		    var searchCriteria = new Object();
+ 		    searchCriteria.carlicensetxt = $('#carlicensetxt').val();
+ 		    searchCriteria.provinceddl = $('#provinceddl').val();
+ 		    	
+ 			$.ajax({   
+ 	            url:'/api/SearchCarLicense',   
+ 	            type:'POST',  
+ 	            dataType: 'json',
+ 	            data: JSON.stringify(searchCriteria),
+ 	            contentType: 'application/json',
+ 	            mimeType: 'application/json',
+ 	            success: function(data) {   
+ 	            	$('#SearchCarLicense').hide();
+ 	            	$('#ResultCarLicense').show();
+ 	            	
+ 	            	$('#carlicenseresulttxt').val(data.carlicense);
+ 	            	$('#startdateresulttxt').val(data.startdatetxt);
+ 	            	$('#enddateresulttxt').val(data.enddatetxt);
+ 	            	
+ 	 	        },
+ 	            error:function(error) {
+ 	                alert("error message :" + error);
+ 	            }
+ 	       }); 
+ 		}
     
 </script>  
 </head>
@@ -125,10 +154,10 @@ body {
 					<h1>สวัสดี, กรัณย์</h1>
 				</div>
 				<div class="row-fluid">
-					<div class="span12">
+					<div class="span12" id="SearchCarLicense">
 
 						<!-- ==================================== start content================================================================================================================================== -->
-						<h2>Park-ko : Search Car license</h2>
+						<h2>คิดราคาค่าจอดรถ</h2>
 						<fieldset>
 							<legend>ค้นหา</legend>
 							<table>
@@ -144,7 +173,7 @@ body {
 								</tr>
 								<tr>
 									<td colspan="2" style="text-align: center"><button
-											id="searchbtn">ค้นหา</button></td>
+											id="searchbtn" onclick="searchCarLicense();">ค้นหา</button></td>
 									<td></td>
 								</tr>
 							</table>
@@ -153,6 +182,9 @@ body {
 
 
 					</div>
+					
+					<%@ include file="ResultCarLicense.jsp" %>
+					
 					<!--/span-->
 				</div>
 				<!--/row-->

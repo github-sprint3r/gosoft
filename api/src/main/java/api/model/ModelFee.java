@@ -91,7 +91,11 @@ public class ModelFee {
 		this.endTime = endTime;
 	}
 
-	public void inquiry() {
+	public void inquiry() throws Exception {
 		getFeeDAO().inquiry(this);	
+	}
+
+	public void save() throws Exception {
+		getFeeDAO().save(this);	
 	}
 }

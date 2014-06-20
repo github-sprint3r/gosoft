@@ -38,36 +38,7 @@ Test Result Car License Free Parking
 	Press Key   receiveamounttxt    \13
 	
 	Wait Until Page Contains    เงินทอน
-	
-	Wait Until Page Contains    ธนบัตรใบล่ะ 1,000 บาท
-	Textfield Should Contain    cash1000txt    0
-	
-	Wait Until Page Contains    ธนบัตรใบล่ะ 500 บาท
-	Textfield Should Contain    cash500txt    0	
-	
-	Wait Until Page Contains    ธนบัตรใบล่ะ 100 บาท
-	Textfield Should Contain    cash100txt    0	
-	
-	Wait Until Page Contains    ธนบัตรใบล่ะ 50 บาท
-	Textfield Should Contain    cash50txt    0	
-	
-	Wait Until Page Contains    ธนบัตรใบล่ะ 20 บาท
-	Textfield Should Contain    cash20txt    0
-	
-	Wait Until Page Contains    เหรียญล่ะ 10 บาท
-	Textfield Should Contain    cash10txt    0	
-	
-	Wait Until Page Contains    เหรียญล่ะ 5 บาท
-	Textfield Should Contain    cash5txt    0
-	
-	Wait Until Page Contains    เหรียญล่ะ 1 บาท
-	Textfield Should Contain    cash1txt    0
-	
-	Wait Until Page Contains    เหรียญล่ะ 50 สตางค์
-	Textfield Should Contain    cash50stxt    0
-		
-	Wait Until Page Contains    เหรียญล่ะ 25 สตางค์
-	Textfield Should Contain    cash25stxt    0
+	Textfield Should Contain    changeamounttxt    0
 	
 	Click Button    finishbtn 
 	Wait Until Page Contains    ค้นหา
