@@ -4,6 +4,14 @@
 	function backToSearchCarLicense() {
 		$('#SearchCarLicense').show();
      	$('#ResultCarLicense').hide();    
+     	
+     	
+     	
+     	$('#carlicensemassage').html("");
+		$('#provincemassage').html(""); 
+		
+		$('#carlicensetxt').val("");
+		$('#provinceddl').val("");
  	}
 	
 	function calculateChange(event) {
