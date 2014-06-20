@@ -1,6 +1,8 @@
 package api.model;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import api.dao.FeeDAO;
 
@@ -103,6 +105,20 @@ public class ModelFee {
 	}
 
 	public boolean checkData() {
+		Set<String> checkDuplicate = new HashSet<String>();
+		for (int start = 0; start < getHourStart().size(); start++) {
+			if(!getHourStart().get(start).equals(""))
+				if(!checkDuplicate.add(getHourStart().get(start)))
+					return false;
+		}
+		
+		checkDuplicate = new HashSet<String>();
+		for (int end = 0; end < getHourEnd().size(); end++) {
+			if(!getHourEnd().get(end).equals(""))
+				if(!checkDuplicate.add(getHourEnd().get(end)))
+				return false;
+		}
+		
 		for (int start = 0; start < getHourStart().size(); start++) {
 			for (int end = 0; end < getHourEnd().size(); end++) {
 				if(!getHourStart().get(start).equals("") || !getHourStart().get(end).equals("")) {
