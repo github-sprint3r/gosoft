@@ -12,10 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.codehaus.jackson.map.ObjectMapper;
 
-import api.dao.FeeDAO;
-import api.model.ModelFee;
+import api.dao.PromotionDAO;
+import api.model.ModelPromotion;
 
-@WebServlet("/feeSaveServlet")
+@WebServlet("/promotionSaveServlet")
 public class PromotionSaveServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -31,22 +31,21 @@ public class PromotionSaveServlet extends HttpServlet {
 		}
 
 		ObjectMapper mapper = new ObjectMapper();
-
-		ModelFee fee = mapper.readValue(json, ModelFee.class);
+		ModelPromotion modelPromotion = mapper.readValue(json, ModelPromotion.class);
 
 		try {
-			getSaveData(fee);
-			mapper.writeValue(response.getOutputStream(), fee);
+			getSaveData(modelPromotion);
+			mapper.writeValue(response.getOutputStream(), modelPromotion);
 		} catch (Exception e) {
 			e.printStackTrace();
 			response.sendError(HttpServletResponse.SC_BAD_REQUEST,e.getMessage());
 		}
 	}
 
-	public void getSaveData(ModelFee fee) throws Exception {
-		fee.setFeeDAO(new FeeDAO());
-		fee.save();
-		fee.setFeeDAO(null);
+	public void getSaveData(ModelPromotion modelPromotion) throws Exception {
+		modelPromotion.setPromotionDAO(new PromotionDAO());
+		modelPromotion.save();
+		modelPromotion.setPromotionDAO(null);
 		
 	}
 
