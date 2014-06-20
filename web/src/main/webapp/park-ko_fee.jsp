@@ -143,7 +143,7 @@ body {
 							</tr>
 						</table>
 						<br>
-						<button type="button" name="REGISTER_FEE" id="REGISTER_FEE">บันทึก</button>
+						<button type="button" name="REGISTER_FEE" id="REGISTER_FEE" onClick="requestSaveFee();">บันทึก</button>
 					</div>
 					<!--/span-->
 				</div>
