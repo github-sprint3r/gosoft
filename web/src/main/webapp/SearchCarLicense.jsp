@@ -116,16 +116,19 @@ body {
  	            dataType: 'json',
  	            contentType: "application/json; charset=utf-8",
  	            data: JSON.stringify(searchCriteria),
- 	            success: function(data) {   
- 	            	$('#SearchCarLicense').hide();
- 	            	$('#ResultCarLicense').show(); 	            	
- 	            	$('#carlicenseresulttxt').val(data.carlicense);
- 	            	$('#startdateresulttxt').val(data.startdatetxt);
- 	            	$('#enddateresulttxt').val(data.enddatetxt);
- 	            	$('#totalhoursresulttxt').val(data.totalhourtxt); 	            	
- 	            	$('#netpriceresulttxt').val(data.netpricetxt);
- 	            	$('#discountpriceresulttxt').val(data.discountpricetxt);
- 	            	
+ 	            success: function(data) { 
+ 	            	if (data.carlicense == null) {
+ 	            		$('#carlicensemassage').html("รถคุณแน่หรอ !");
+ 	            	} else {
+ 	            		$('#SearchCarLicense').hide();
+ 	 	            	$('#ResultCarLicense').show(); 	    
+ 	            		$('#carlicenseresulttxt').val(data.carlicense);
+ 	 	            	$('#startdateresulttxt').val(data.startdatetxt);
+ 	 	            	$('#enddateresulttxt').val(data.enddatetxt);
+ 	 	            	$('#totalhoursresulttxt').val(data.totalhourtxt); 	            	
+ 	 	            	$('#netpriceresulttxt').val(data.netpricetxt);
+ 	 	            	$('#discountpriceresulttxt').val(data.discountpricetxt);
+ 	            	}
  	            },
  	            error:function(error) {
  	                alert("error message :" + error);
