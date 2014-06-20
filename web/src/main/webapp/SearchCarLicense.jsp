@@ -197,9 +197,8 @@ body {
 									<select id="provinceddl"></select>&nbsp;<span id="provincemassage" style="color: red; font-weight: bold;"></span></td>
 								</tr>
 								<tr>
-									<td colspan="2" style="text-align: center"><button
-											id="searchbtn" onclick=" validate();">ค้นหา</button></td>
 									<td></td>
+									<td><button id="searchbtn" onclick="validate();">ค้นหา</button></td>
 								</tr>
 							</table>
 						</fieldset>
