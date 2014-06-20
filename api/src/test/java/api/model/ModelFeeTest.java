@@ -115,7 +115,7 @@ public class ModelFeeTest {
 	}
 	
 	@Test
-	public void checkDataStartEqualStart() {
+	public void checkDataDuplicateEnd() {
 		ModelFee modelFee = new ModelFee();
 		List<String> hourStarts = new ArrayList<String>();
 		hourStarts.add("1");
@@ -123,10 +123,10 @@ public class ModelFeeTest {
 		hourStarts.add("10");
 		List<String> hourEnds = new ArrayList<String>();
 		hourEnds.add("1");
-		hourEnds.add("9");
+		hourEnds.add("1");
 		hourEnds.add("99");
 		modelFee.setHourStart(hourStarts);
 		modelFee.setHourEnd(hourEnds);
-		assertTrue(modelFee.checkData());
+		assertFalse(modelFee.checkData());
 	}
 }

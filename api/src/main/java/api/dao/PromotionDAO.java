@@ -38,10 +38,10 @@ public class PromotionDAO {
 
 		try {
 			if (resultSet.next()) {
-				modelPromotion.setId("ID");
-				modelPromotion.setFeeType("FEE_TYPE");
-				modelPromotion.setPromotionName("PROMOTION_NAME");
-				modelPromotion.setDiscountHours("DISCOUNT_HOURS");
+				modelPromotion.setId(resultSet.getString("ID"));
+				modelPromotion.setFeeType(resultSet.getString("FEE_TYPE"));
+				modelPromotion.setPromotionName(resultSet.getString("PROMOTION_NAME"));
+				modelPromotion.setDiscountHours(resultSet.getString("DISCOUNT_HOURS"));
 			}
 		} catch (Exception exception) {
 			throw exception;
