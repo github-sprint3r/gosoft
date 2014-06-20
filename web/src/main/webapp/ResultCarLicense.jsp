@@ -7,8 +7,16 @@
  	}
 	
 	function calculateChange(event) {
-		if (event.keyCode == 13) {			
+		if (event.keyCode == 13) {	
+			alert($('#promotionddl').val());
+			
 			var netprice = parseFloat($('#netpriceresulttxt').val());
+			if ($('#promotionddl').val() == '1') {
+				
+			} else {				
+				
+			}
+			
 			var receiveamount = parseFloat($('#receiveamountresulttxt').val());  
 			var cashchange = receiveamount - netprice;
 			$('#changeamountresulttxt').val(cashchange);
@@ -39,12 +47,13 @@
 			<td>รวมเวลาจอด :</td>
 			<td><input type="text" id="totalhoursresulttxt" name="totalhoursresulttxt"
 				style="width: 30px;" /> ชั่วโมง <input type="text" id="totalminresulttxt"
-				name="totalminresulttxt" style="width: 30px;" /> นาที</td>
+				name="totalminresulttxt" style="width: 30px;" value="00" /> นาที</td>
 			<td></td>
 		<tr>
 		<tr>
 			<td>ค่าที่จอดรวม:</td>
 			<td><input type="text" id="netpriceresulttxt" name="netpriceresulttxt" />
+			<input type="hidden" id="discountpriceresulttxt" name="discountpriceresulttxt" />
 				บาท</td>
 			<td></td>
 		<tr>
