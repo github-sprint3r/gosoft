@@ -4,29 +4,29 @@
 	<table cellpadding="5">
 		<tr>
 			<td>หมายเลขทะเบียนรถ :</td>
-			<td><input type="text" id="carlicensetxt" name="carlicensetxt" /></td>
+			<td><input type="text" id="carlicenseresulttxt" name="carlicenseresulttxt" /></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td>วันเข้าจอด :</td>
-			<td><input type="text" id="startdatetxt" name="startdatetxt" /></td>
+			<td><input type="text" id="startdateresulttxt" name="startdateresulttxt" /></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td>วันออกจอด :</td>
-			<td><input type="text" id="enddatetxt" name="enddatetxt" /></td>
+			<td><input type="text" id="enddateresulttxt" name="enddateresulttxt" /></td>
 			<td></td>
 		</tr>
 		<tr>
-			<td>รวยเวลาจอด :</td>
-			<td><input type="text" id="totalhourstxt" name="totalhourstxt"
-				style="width: 30px;" /> ชั่วโมง <input type="text" id="totalmintxt"
-				name="totalmintxt" style="width: 30px;" /> นาที</td>
+			<td>รวมเวลาจอด :</td>
+			<td><input type="text" id="totalhoursresulttxt" name="totalhoursresulttxt"
+				style="width: 30px;" /> ชั่วโมง <input type="text" id="totalminresulttxt"
+				name="totalminresulttxt" style="width: 30px;" /> นาที</td>
 			<td></td>
 		<tr>
 		<tr>
 			<td>ค่าที่จอดรวม:</td>
-			<td><input type="text" id="netpricetxt" name="netpricetxt" />
+			<td><input type="text" id="netpriceresulttxt" name="netpriceresulttxt" />
 				บาท</td>
 			<td></td>
 		<tr>
@@ -38,15 +38,19 @@
 		</tr>
 		<tr>
 			<td>จำนวนเงินที่รับ:</td>
-			<td><input type="text" id="receiveamounttxt"
-				name="receiveamounttxt" onkeypress="formatCurrency(this)" /> บาท</td>
+			<td><input type="text" id="receiveamountresulttxt"
+				name="receiveamountresulttxt" onkeypress="formatCurrency(this)" /> บาท</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>เงินทอน:</td>
+			<td><input type="text" id="changeamountresulttxt"
+				name="changeamountresulttxt"  /> บาท</td>
 			<td></td>
 		</tr>
 
-
-
 	</table>
-
+    <button id="finishresultbtn" onclick = "window.location(SearchCarLicense.jsp);">เสร็จ</button>
 
 
 
