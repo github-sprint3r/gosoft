@@ -64,11 +64,11 @@ public class SearchCarLicenseServlet extends HttpServlet {
 			
 			System.out.println("car license :" + transaction.getCarlicense());
 			System.out.println("start date :" + transaction.getCarlicense());
-			System.out.println("end date :" + transaction.getCarlicense());
+			System.out.println("end date :" + transaction.getCarlicense());			
+			System.out.println("net price :" + transaction.getNetpricetxt());
+			System.out.println("day time hour :" + transaction.getDaytimehour());
 			
-			
-			
-			
+			response.setContentType("text/json; charset=utf-8");
 			mapper.writeValue(response.getOutputStream(), transaction);
 		} catch (Exception ex) {
 			ex.printStackTrace();
