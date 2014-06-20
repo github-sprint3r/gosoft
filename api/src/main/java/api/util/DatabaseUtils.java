@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 public class DatabaseUtils {
 	public static Connection getConnection() throws Exception {
-		String DATABASE_URL = "jdbc:mysql://192.168.100.222:3306/PARK_KO";
+		String DATABASE_URL = "jdbc:mysql://192.168.100.222:3306/PARK_KO?useUnicode=true&characterEncoding=UTF-8";
 
 		String DATABASE_USERNAME = "park-ko";
 		String DATABASE_PASSWORD = "xitgmLwmp";

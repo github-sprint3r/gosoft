@@ -1,5 +1,31 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+<script type="text/javascript"> 
+	function backToSearchCarLicense() {
+		$('#SearchCarLicense').show();
+     	$('#ResultCarLicense').hide();    
+ 	}
+	
+	function calculateChange(event) {
+		if (event.keyCode == 13) {	
+			alert($('#promotionddl').val());
+			
+			var netprice = parseFloat($('#netpriceresulttxt').val());
+			if ($('#promotionddl').val() == '1') {
+				
+			} else {				
+				
+			}
+			
+			var receiveamount = parseFloat($('#receiveamountresulttxt').val());  
+			var cashchange = receiveamount - netprice;
+			$('#changeamountresulttxt').val(cashchange);
+			
+			
+	    }
+ 	}
+	
+</script>		
 <div class="span12" id="ResultCarLicense">
 	<table cellpadding="5">
 		<tr>
@@ -9,24 +35,25 @@
 		</tr>
 		<tr>
 			<td>วันเข้าจอด :</td>
-			<td><input type="text" id="startdateresulttxt" name="startdateresulttxt" /></td>
+			<td><input type="text" id="startdateresulttxt" name="startdateresulttxt" style="width: 400px;"/></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td>วันออกจอด :</td>
-			<td><input type="text" id="enddateresulttxt" name="enddateresulttxt" /></td>
+			<td><input type="text" id="enddateresulttxt" name="enddateresulttxt" style="width: 400px;"/></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td>รวมเวลาจอด :</td>
 			<td><input type="text" id="totalhoursresulttxt" name="totalhoursresulttxt"
 				style="width: 30px;" /> ชั่วโมง <input type="text" id="totalminresulttxt"
-				name="totalminresulttxt" style="width: 30px;" /> นาที</td>
+				name="totalminresulttxt" style="width: 30px;" value="00" /> นาที</td>
 			<td></td>
 		<tr>
 		<tr>
 			<td>ค่าที่จอดรวม:</td>
 			<td><input type="text" id="netpriceresulttxt" name="netpriceresulttxt" />
+			<input type="hidden" id="discountpriceresulttxt" name="discountpriceresulttxt" />
 				บาท</td>
 			<td></td>
 		<tr>
@@ -39,7 +66,7 @@
 		<tr>
 			<td>จำนวนเงินที่รับ:</td>
 			<td><input type="text" id="receiveamountresulttxt"
-				name="receiveamountresulttxt" onkeypress="formatCurrency(this)" /> บาท</td>
+				name="receiveamountresulttxt" onkeypress="calculateChange(event)" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกเฉพาะตัวเลขซิจ๊ะ'); this.value='';}"/> บาท</td>
 			<td></td>
 		</tr>
 		<tr>
@@ -48,9 +75,13 @@
 				name="changeamountresulttxt"  /> บาท</td>
 			<td></td>
 		</tr>
-
+		<tr>
+			<td></td>
+			<td><button id="finishbtn" onclick = "backToSearchCarLicense();">เสร็จ</button></td>
+			<td></td>
+		</tr>
 	</table>
-    <button id="finishresultbtn" onclick = "window.location(SearchCarLicense.jsp);">เสร็จ</button>
+    
 
 
 
