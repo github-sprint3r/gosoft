@@ -57,7 +57,7 @@
           <a class="brand" href="#">Park-Ko</a>
           <div class="nav-collapse collapse">
             <p class="navbar-text pull-right">
-              Logged in as <a href="#" class="navbar-link">karan</a>
+              Logged in as <a href="SearchCarLicense.jsp" class="navbar-link">karan</a>
             </p>
           </div><!--/.nav-collapse -->
         </div>
@@ -73,7 +73,7 @@
               <li class><a href="park-ko_fee.jsp">กำหนดอัตราค่าจอดรถ</a></li>
               <li class="active"><a href="park-ko_promotion.jsp">กำหนดส่วนลด</a></li>
               <li class="nav-header">การจัดการ</li>
-              <li><a href="#">คิดราคาค่าจอดรถ</a></li>
+              <li><a href="SearchCarLicense.jsp">คิดราคาค่าจอดรถ</a></li>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
