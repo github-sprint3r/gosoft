@@ -54,7 +54,7 @@ public class FeeDAO {
 
 	public void save(ModelFee modelFee) throws Exception {
 		String feeType = modelFee.getFeeType();
-		String queryDeletePKO_FEEbyFEE_TYPE = "DELETE PKO_FEE "
+		String queryDeletePKO_FEEbyFEE_TYPE = "DELETE FROM PKO_FEE "
 				+ "WHERE FEE_TYPE = '"+feeType+"'";
 		Connection connection = DatabaseUtils.getConnection();
 		Statement statement = connection.createStatement();
