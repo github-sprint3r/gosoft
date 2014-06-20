@@ -7,8 +7,27 @@ public class ModelPromotion {
 	String feeType;
 	String promotionName;
 	String discountHours;
-	PromotionDAO promotionDAO;
+	String startTime;
+	String endTime;
 
+	PromotionDAO promotionDAO;
+	
+	public String getStartTime() {
+		return startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+
+	public String getEndTime() {
+		return endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+	
 	public PromotionDAO getPromotionDAO() {
 		return promotionDAO;
 	}
