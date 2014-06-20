@@ -48,7 +48,7 @@ public class ModelFeeType {
 	}
 	
 	
-	public void inquiry() {
+	public void inquiry() throws Exception{
 		getFeeTypeDAO().inquiry(this);
 		
 	}

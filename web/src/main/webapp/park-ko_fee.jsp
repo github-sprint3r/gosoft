@@ -81,7 +81,7 @@ body {
 						<li class="active"><a href="park-ko_fee.jsp">กำหนดอัตราค่าจอดรถ</a></li>
 						<li class><a href="park-ko_promotion.jsp">กำหนดส่วนลด</a></li>
 						<li class="nav-header">การจัดการ</li>
-						<li><a href="#">คิดราคาค่าจอดรถ</a></li>
+						<li><a href="SearchCarLicense.jsp">คิดราคาค่าจอดรถ</a></li>
 					</ul>
 				</div>
 				<!--/.well -->
