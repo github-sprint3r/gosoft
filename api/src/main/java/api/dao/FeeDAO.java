@@ -3,6 +3,7 @@ package api.dao;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,6 +52,35 @@ public class FeeDAO {
 		DatabaseUtils.releaseResources(connection, statement, resultSet);
 	}
 
-	public void save(ModelFee modelFee) {
+	public void save(ModelFee modelFee) throws Exception {
+		String feeType = modelFee.getFeeType();
+		String queryDeletePKO_FEEbyFEE_TYPE = "DELETE PKO_FEE "
+				+ "WHERE FEE_TYPE = '"+feeType+"'";
+		Connection connection = DatabaseUtils.getConnection();
+		Statement statement = connection.createStatement();
+		statement.executeUpdate(queryDeletePKO_FEEbyFEE_TYPE);
+		
+		List<String> feeNames = modelFee.getFeeName();
+		List<String> hourStarts = modelFee.getHourStart();
+		List<String> hourEnds = modelFee.getHourEnd();
+		List<String> feePerHours = modelFee.getFeePerHour();
+		
+		String queryInsertIntoPKO_FEE = "INSERT INTO PKO_FEE (FEE_NAME, HOUR_START, HOUR_END, FEE_PER_HOUR) VALUES (?, ?, ?, ?)";
+		PreparedStatement prepareStatement = connection.prepareStatement(queryInsertIntoPKO_FEE);
+		
+		for (int dataRow = 0; dataRow < feeNames.size(); dataRow++) {
+			String feeName = feeNames.get(dataRow);
+			if(feeName != null && !feeName.equals("")) {
+				prepareStatement.setString(1, feeName);
+				prepareStatement.setString(2, hourStarts.get(dataRow));
+				prepareStatement.setString(3, hourEnds.get(dataRow));
+				prepareStatement.setString(4, feePerHours.get(dataRow));
+				prepareStatement.executeUpdate();
+			}
+		}
+		
+		connection.close();
+		statement.close();
+		prepareStatement.close();
 	}
 }

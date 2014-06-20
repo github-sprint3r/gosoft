@@ -94,4 +94,8 @@ public class ModelFee {
 	public void inquiry() throws Exception {
 		getFeeDAO().inquiry(this);	
 	}
+
+	public void save() throws Exception {
+		getFeeDAO().save(this);	
+	}
 }
