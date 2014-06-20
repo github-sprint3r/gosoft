@@ -27,7 +27,8 @@ function requestPromotionData(){
        
     });
 	
-	function requestSaveFee(){
+	function requestSavePromotion(){
+		console.log("dfghsajkdas");
 		 var promotion = {
 				 feeType : $('#FEE_TYPE_NAME').val(),
 				 promotionName :$('#PROMOTION_NAME_1').val(),
