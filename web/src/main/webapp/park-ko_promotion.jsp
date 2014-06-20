@@ -113,7 +113,7 @@
               			</tr>
               </table>
               <br>
-              		 <button type="button" name = "REGISTER_PROMOTION"  id = "REGISTER_PROMOTION" >บันทึก</button> 
+              		 <button type="button" name = "REGISTER_PROMOTION"  id = "REGISTER_PROMOTION" onClick="requestSavePromotion();">บันทึก</button>
               </div><!--/span-->
           </div><!--/row-->
         </div><!--/span-->
