@@ -15,7 +15,7 @@ public class FeeDAO {
 		String feeType = modelFee.getFeeType();
 		String query = "SELECT ID, FEE_NAME, HOUR_START, HOUR_END, FEE_PER_HOUR "
 				+ "FROM PKO_FEE "
-				+ "WHERE PEE_TYPE = '"+feeType+"' "
+				+ "WHERE FEE_TYPE = '"+feeType+"' "
 				+ "ORDER BY ID";
 		
 		Connection connection = DatabaseUtils.getConnection();
@@ -32,7 +32,7 @@ public class FeeDAO {
 			if(resultSet.next()) {
 				ids.add(resultSet.getString("ID"));
 				feeNames.add(resultSet.getString("FEE_NAME"));
-				hourStarts.add(resultSet.getString(" HOUR_START"));
+				hourStarts.add(resultSet.getString("HOUR_START"));
 				hourEnds.add(resultSet.getString("HOUR_END"));
 				feePerHours.add(resultSet.getString("FEE_PER_HOUR"));
 			} else {
@@ -49,5 +49,8 @@ public class FeeDAO {
 		modelFee.setHourEnd(hourEnds);
 		modelFee.setFeePerHour(feePerHours);
 		DatabaseUtils.releaseResources(connection, statement, resultSet);
+	}
+
+	public void save(ModelFee modelFee) {
 	}
 }

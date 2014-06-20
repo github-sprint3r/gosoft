@@ -2,7 +2,6 @@ package api.dao;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 
 import api.model.ModelFeeType;
@@ -10,7 +9,7 @@ import api.util.DatabaseUtils;
 
 public class FeeTypeDAO {
 
-	public void inquiry(ModelFeeType modelFeeType) {
+	public void inquiry(ModelFeeType modelFeeType) throws Exception {
 
 		Connection connection = null;
 		Statement statement = null;
@@ -32,17 +31,10 @@ public class FeeTypeDAO {
 				modelFeeType.setStartTime(resultSet.getString("START_TIME"));
 				modelFeeType.setEndTime(resultSet.getString("END_TIME"));
 			}
-		} catch (Exception ex) {
-			System.out.println("ERROR:" + ex.toString());
-
+		} catch (Exception exception) {
+			throw exception;
 		} finally {
-			try {
-				DatabaseUtils
-						.releaseResources(connection, statement, resultSet);
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+			DatabaseUtils.releaseResources(connection, statement, resultSet);
 		}
 	}
-
 }
