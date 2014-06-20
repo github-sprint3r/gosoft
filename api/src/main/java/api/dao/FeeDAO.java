@@ -52,10 +52,5 @@ public class FeeDAO {
 	}
 
 	public void save(ModelFee modelFee) {
-		String feeType = modelFee.getFeeType();
-		String query = "DELETE PKO_FEE "
-				+ "WHERE FEE_TYPE = '"+feeType+"'";
-		Connection connection = DatabaseUtils.getConnection();
-		Statement statement = connection.createStatement();
 	}
 }
