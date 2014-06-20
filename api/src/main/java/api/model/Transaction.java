@@ -6,10 +6,13 @@ public class Transaction {
 
 	private String carlicense;
 	private int provinceid;
-	private Date startdate;
-	private Date enddate;
 	private String startdatetxt;
 	private String enddatetxt;
+	private int netpricetxt;
+	
+	private String totalhourtxt;
+	private int daytimehour;
+	private int nighttimehour;
 	
 	public String getCarlicense() {
 		return carlicense;
@@ -23,18 +26,6 @@ public class Transaction {
 	public void setProvinceid(int provinceid) {
 		this.provinceid = provinceid;
 	}
-	public Date getStartdate() {
-		return startdate;
-	}
-	public void setStartdate(Date startdate) {
-		this.startdate = startdate;
-	}
-	public Date getEnddate() {
-		return enddate;
-	}
-	public void setEnddate(Date enddate) {
-		this.enddate = enddate;
-	}
 	public String getStartdatetxt() {
 		return startdatetxt;
 	}
@@ -47,5 +38,28 @@ public class Transaction {
 	public void setEnddatetxt(String enddatetxt) {
 		this.enddatetxt = enddatetxt;
 	}
-	
+	public int getNetpricetxt() {
+		return netpricetxt;
+	}
+	public void setNetpricetxt(int netpricetxt) {
+		this.netpricetxt = netpricetxt;
+	}
+	public String getTotalhourtxt() {
+		return totalhourtxt;
+	}
+	public void setTotalhourtxt(String totalhourtxt) {
+		this.totalhourtxt = totalhourtxt;
+	}
+	public int getDaytimehour() {
+		return daytimehour;
+	}
+	public void setDaytimehour(int daytimehour) {
+		this.daytimehour = daytimehour;
+	}
+	public int getNighttimehour() {
+		return nighttimehour;
+	}
+	public void setNighttimehour(int nighttimehour) {
+		this.nighttimehour = nighttimehour;
+	}
 }

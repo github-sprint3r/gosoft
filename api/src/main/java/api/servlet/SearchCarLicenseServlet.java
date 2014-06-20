@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.codehaus.jackson.map.ObjectMapper;
 
+import api.dao.CarLicenseDAO;
 import api.dao.SearchCarLicenseDAO;
 import api.model.SearchCriteria;
 import api.model.Transaction;
@@ -58,8 +59,16 @@ public class SearchCarLicenseServlet extends HttpServlet {
 			ObjectMapper mapper = new ObjectMapper();
 			SearchCriteria searchCriteria = mapper.readValue(json, SearchCriteria.class);
 			
-			Transaction transaction = new Transaction();
-			 
+			SearchCarLicenseDAO carLicenseDAO = new SearchCarLicenseDAO();
+			Transaction transaction = carLicenseDAO.searchCarLicense(searchCriteria.getCarlicensetxt(), Integer.valueOf(searchCriteria.getProvinceddl())) ;
+			
+			System.out.println("car license :" + transaction.getCarlicense());
+			System.out.println("start date :" + transaction.getCarlicense());
+			System.out.println("end date :" + transaction.getCarlicense());
+			
+			
+			
+			
 			mapper.writeValue(response.getOutputStream(), transaction);
 		} catch (Exception ex) {
 			ex.printStackTrace();

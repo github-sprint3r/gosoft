@@ -96,6 +96,24 @@ public class ModelFee {
 	}
 
 	public void save() throws Exception {
-		getFeeDAO().save(this);	
+		if(checkData())
+			getFeeDAO().save(this);
+		else
+			throw new Exception();
+	}
+
+	public boolean checkData() {
+		for (int start = 0; start < getHourStart().size(); start++) {
+			for (int end = 0; end < getHourEnd().size(); end++) {
+				if(!getHourStart().get(start).equals("") || !getHourStart().get(end).equals("")) {
+					if(start != end) {
+						if(getHourStart().get(start).compareTo(getHourStart().get(end)) > 0)
+							if(getHourStart().get(start).compareTo(getHourEnd().get(end)) <= 0)
+								return false;
+					}
+				}
+			}
+		}
+		return true;
 	}
 }
