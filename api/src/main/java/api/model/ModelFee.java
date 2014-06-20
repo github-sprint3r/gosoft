@@ -106,9 +106,9 @@ public class ModelFee {
 		for (int start = 0; start < getHourStart().size(); start++) {
 			for (int end = 0; end < getHourEnd().size(); end++) {
 				if(!getHourStart().get(start).equals("") || !getHourStart().get(end).equals("")) {
-					if(start != end) {
-						if(getHourStart().get(start).compareTo(getHourStart().get(end)) > 0)
-							if(getHourStart().get(start).compareTo(getHourEnd().get(end)) <= 0)
+					if(start != end &&  !getHourStart().get(start).equals("") &&  !getHourStart().get(end).equals("")) {
+						if(Integer.parseInt(getHourStart().get(start)) > Integer.parseInt(getHourStart().get(end)))
+							if(Integer.parseInt(getHourStart().get(start)) <= Integer.parseInt(getHourEnd().get(end)))
 								return false;
 					}
 				}

@@ -40,7 +40,21 @@ public class SearchCarLicenseDAO {
 						 "     y.totalofhourtxt, " +
 						 "     getTotalCostDayTime(y.day_time_hour) + getTotalCostNightTime(y.night_time_hour) as netpricetxt,  " +
 						 " 	y.day_time_hour,  " +
-						 " 	y.night_time_hour " +
+						 " 	y.night_time_hour, " +
+		    " case when  getTotalCostDayTime(y.day_time_hour) +  " +
+				" 		getTotalCostNightTime(y.night_time_hour) -  " +
+					"	(select  " +
+					"	getTotalCostDayTime((select discount_hours " +
+					"						 from park_ko.pko_promotion " +
+					"						 where fee_type = 'DAY_TIME')) from dual)  < 0  " +
+			      " then 0  " +
+		          " else  getTotalCostDayTime(y.day_time_hour) +  " +
+					" 	getTotalCostNightTime(y.night_time_hour) -  " +
+						" (select  " +
+						" getTotalCostDayTime((select discount_hours " +
+							" 				 from park_ko.pko_promotion " +
+								" 			 where fee_type = 'DAY_TIME')) from dual) end " +
+			 " as discountpricetxt " +
 						 " from " +
 						 "     (select  " +
 						 "         z.CAR_LICENSE as carlicensetxt,z.province_id, " +
@@ -179,6 +193,7 @@ public class SearchCarLicenseDAO {
 					transaction.setNighttimehour(rs.getInt("night_time_hour"));
 					transaction.setTotalhourtxt(rs.getString("totalofhourtxt"));
 					transaction.setNetpricetxt(rs.getInt("netpricetxt"));
+					transaction.setDiscountpricetxt(rs.getInt("discountpricetxt"));
 	
 				}
 				
