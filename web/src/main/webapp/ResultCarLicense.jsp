@@ -39,7 +39,7 @@
 			<td>รวมเวลาจอด :</td>
 			<td><input type="text" id="totalhoursresulttxt" name="totalhoursresulttxt"
 				style="width: 30px;" /> ชั่วโมง <input type="text" id="totalminresulttxt"
-				name="totalminresulttxt" style="width: 30px;" /> นาที</td>
+				name="totalminresulttxt" style="width: 30px;" value="00" /> นาที</td>
 			<td></td>
 		<tr>
 		<tr>

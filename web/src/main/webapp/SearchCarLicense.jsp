@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Park-Ko</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
@@ -82,28 +82,54 @@ body {
               }
          }); 
          
+         function alertMessage(messageAlert) {
+     		alert(messageAlert);
+     	}
+
+     	function validate() {
+     		var carlicensetxt = $('#carlicensetxt').val();
+     		var provinceddl = $('#provinceddl').val();
+     		      	
+     		if (carlicensetxt == "" && provinceddl == "") {
+     			$('#carlicensemassage').html("กรุณากรอกหมายเลขทะเบียนรถด้วยนะจ๊ะ");
+     			$('#provincemassage').html("กรุณาเลือกจังหวัดด้วยนะจ๊ะ");     					
+     		} else if (carlicensetxt == "") {     			
+     			$('#carlicensemassage').html("กรุณากรอกหมายเลขทะเบียนรถด้วยนะจ๊ะ");  
+     		} else if (provinceddl == "0") {
+     			$('#provincemassage').html("กรุณาเลือกจังหวัดด้วยนะจ๊ะ");     
+     		} else if (carlicensetxt.length<3 || carlicensetxt.length>7) {
+     			$('#carlicensemassage').html("รถคุณแน่หรอ !");     	
+     		} else{
+     			searchCarLicense();
+     		}
+     	}
+         
          
          function searchCarLicense() {
  		    var searchCriteria = new Object();
  		    searchCriteria.carlicensetxt = $('#carlicensetxt').val();
  		    searchCriteria.provinceddl = $('#provinceddl').val();
- 		    	
- 			$.ajax({   
+ 		  
+	    	$.ajax({   
  	            url:'/api/SearchCarLicense',   
  	            type:'POST',  
  	            dataType: 'json',
+ 	            contentType: "application/json; charset=utf-8",
  	            data: JSON.stringify(searchCriteria),
- 	            contentType: 'application/json',
- 	            mimeType: 'application/json',
  	            success: function(data) {   
  	            	$('#SearchCarLicense').hide();
- 	            	$('#ResultCarLicense').show();
- 	            	
+ 	            	$('#ResultCarLicense').show(); 	            	
  	            	$('#carlicenseresulttxt').val(data.carlicense);
  	            	$('#startdateresulttxt').val(data.startdatetxt);
- 	            	$('#enddateresulttxt').val(data.enddatetxt);
+ 	            	$('#enddateresulttxt').val(data.enddatetxt);            	
  	            	
- 	 	        },
+ 	            	
+ 	            	var totalHour = parseInt(data.daytimehour) + parseInt(data.nighttimehour);
+ 	            	
+ 	            	$('#totalhoursresulttxt').val(totalHour);
+ 	            	
+ 	            	$('#netpriceresulttxt').val(data.netpricetxt);
+ 	            },
  	            error:function(error) {
  	                alert("error message :" + error);
  	            }
@@ -163,17 +189,16 @@ body {
 							<table>
 								<tr>
 									<td>หมายเลขทะเบียนรถ(*) :</td>
-									<td><input type="text" id="carlicensetxt" />&nbsp;<span
-										id="carlicensemassage"></span></td>
+									<td><input type="text" id="carlicensetxt" />&nbsp;<span id="carlicensemassage" style="color: red; font-weight: bold;"></span></td>
 								</tr>
 								<tr>
 									<td>จังหวัด(*) :</td>
 									<td>
-									<select id="provinceddl"></select></td>
+									<select id="provinceddl"></select>&nbsp;<span id="provincemassage" style="color: red; font-weight: bold;"></span></td>
 								</tr>
 								<tr>
 									<td colspan="2" style="text-align: center"><button
-											id="searchbtn" onclick="searchCarLicense();">ค้นหา</button></td>
+											id="searchbtn" onclick=" validate();">ค้นหา</button></td>
 									<td></td>
 								</tr>
 							</table>
