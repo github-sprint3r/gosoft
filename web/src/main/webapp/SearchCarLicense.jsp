@@ -52,7 +52,7 @@ body {
 <script type="text/javascript">  
   
          $.ajax({   
-              url:'/web/carLicenseInit',   
+              url:'/api/carLicenseInit',   
               type:'GET',  
               dataType: 'json',
               success: function(data) {   
