@@ -12,69 +12,40 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.codehaus.jackson.map.ObjectMapper;
 
-import api.dao.CarLicenseDAO;
 import api.dao.SearchCarLicenseDAO;
 import api.model.SearchCriteria;
 import api.model.Transaction;
 
-/**
- * Servlet implementation class SearchCarLicenseServlet
- */
 @WebServlet("/SearchCarLicense")
 public class SearchCarLicenseServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	SearchCarLicenseDAO searchCarLicenseDAO = new SearchCarLicenseDAO();
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
 	public SearchCarLicenseServlet() {
 		super();
 	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			BufferedReader br = new BufferedReader(new InputStreamReader(request.getInputStream()));
-			String json = "";
-			if (br != null) {
-				json = br.readLine();
+			request.setCharacterEncoding("utf-8");
+			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(request.getInputStream()));
+			String jsonInputSearchCriteria = "";
+			if (bufferedReader != null) {
+				jsonInputSearchCriteria = bufferedReader.readLine();
 			}
-			
-			System.out.println("json :" + json);
-
 			ObjectMapper mapper = new ObjectMapper();
-			SearchCriteria searchCriteria = mapper.readValue(json, SearchCriteria.class);
-			
-			SearchCarLicenseDAO carLicenseDAO = new SearchCarLicenseDAO();
-			Transaction transaction = carLicenseDAO.searchCarLicense(searchCriteria.getCarlicensetxt(), Integer.valueOf(searchCriteria.getProvinceddl())) ;
-			
-			System.out.println("car license :" + transaction.getCarlicense());
-			System.out.println("start date :" + transaction.getCarlicense());
-			System.out.println("end date :" + transaction.getCarlicense());			
-			System.out.println("net price :" + transaction.getNetpricetxt());
-			System.out.println("day time hour :" + transaction.getDaytimehour());
-			
+			SearchCriteria searchCriteria = mapper.readValue(jsonInputSearchCriteria, SearchCriteria.class);
+			SearchCarLicenseDAO searchCarLicenseDAO = new SearchCarLicenseDAO();
+			Transaction transaction = searchCarLicenseDAO.searchCarLicense(searchCriteria.getCarlicensetxt(), Integer.valueOf(searchCriteria.getProvinceddl())) ;
 			response.setContentType("text/json; charset=utf-8");
 			mapper.writeValue(response.getOutputStream(), transaction);
 		} catch (Exception ex) {
 			ex.printStackTrace();
-
 		}
-
 	}
-
 }
