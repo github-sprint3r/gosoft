@@ -39,8 +39,8 @@ public class FeeServlet extends HttpServlet {
 			getFeeData(fee);
 			mapper.writeValue(response.getOutputStream(), fee);
 		} catch (Exception e) {
-			response.sendError(HttpServletResponse.SC_BAD_REQUEST,
-					e.getMessage());
+			e.printStackTrace();
+			response.sendError(HttpServletResponse.SC_BAD_REQUEST,e.getMessage());
 		}
 	}
 
@@ -54,6 +54,9 @@ public class FeeServlet extends HttpServlet {
 		fee.setEndTime(modelFeeType.getEndTime());
 		fee.setFeeDAO(new FeeDAO());
 		fee.inquiry();
+		
+		fee.setFeeDAO(null);
+		
 	}
 
 }
