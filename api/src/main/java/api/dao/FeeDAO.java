@@ -32,7 +32,7 @@ public class FeeDAO {
 			if(resultSet.next()) {
 				ids.add(resultSet.getString("ID"));
 				feeNames.add(resultSet.getString("FEE_NAME"));
-				hourStarts.add(resultSet.getString(" HOUR_START"));
+				hourStarts.add(resultSet.getString("HOUR_START"));
 				hourEnds.add(resultSet.getString("HOUR_END"));
 				feePerHours.add(resultSet.getString("FEE_PER_HOUR"));
 			} else {
@@ -49,5 +49,13 @@ public class FeeDAO {
 		modelFee.setHourEnd(hourEnds);
 		modelFee.setFeePerHour(feePerHours);
 		DatabaseUtils.releaseResources(connection, statement, resultSet);
+	}
+
+	public void save(ModelFee modelFee) {
+		String feeType = modelFee.getFeeType();
+		String query = "DELETE PKO_FEE "
+				+ "WHERE FEE_TYPE = '"+feeType+"'";
+		Connection connection = DatabaseUtils.getConnection();
+		Statement statement = connection.createStatement();
 	}
 }
